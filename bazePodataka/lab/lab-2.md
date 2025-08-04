@@ -13,6 +13,8 @@
 - HAVING
 ---
 
+**<mark>zadaci za samostalni rad</mark>**
+
 ```sql
 -- 1. zadatak I nacin
 SELECT FILM.NASLOV, REZISER.IME, PREZIME
