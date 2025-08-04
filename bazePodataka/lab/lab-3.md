@@ -35,8 +35,10 @@ WHERE CLAN = 8 AND FILM = 53 AND DATUM_IZNAJMLJIVANJA = '6-APR-2017';
 -- prvo moramo da odstranimo strani kljuc
 ALTER TABLE IZNAJMLJIVANJE DROP CONSTRAINT IZNAJMLJIVANJE_CLAN_FK;
 
--- sada brisemo clana sa brojem 8 iz svih tabela
+-- sada brisemo clana sa brojem 8 iz sporednih tabela (u ovom slucaju samo jedna)
 DELETE FROM IZNAJMLJIVANJE WHERE CLAN = 8;
+
+-- sada  brisemo clana sa brojem 8 iz glavne tabele
 DELETE FROM CLAN WHERE BROJ = 8;
 
 -- vracamo strani kljuc
