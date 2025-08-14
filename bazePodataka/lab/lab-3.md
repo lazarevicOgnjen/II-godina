@@ -2,19 +2,39 @@
 > **lab 3 - azuriranje podataka, pogledi i indeksi**
 
 ---
+<br>
 
-> **nove komande**
-- INSERT INTO .... VALUES
-- SYSDATE
-- UPDATE .... SET
-- DELETE FROM
-- CREATE VIEW .... AS
-- CREATE INDEX .... ON
-- ALTER TABLE
+<table>
+  <tr>
+    <th>nove komande</th>
+  </tr>
+  <tr>
+    <td>INSERT INTO .... VALUES</td>
+  </tr>
+  <tr>
+    <td>SYSDATE</td>
+  </tr>
+  <tr>
+    <td>UPDATE .... SET</td>
+  </tr>
+  <tr>
+    <td>DELETE FROM</td>
+  </tr>
+  <tr>
+    <td>CREATE VIEW .... AS</td>
+  </tr>
+  <tr>
+    <td>CREATE INDEX .... ON</td>
+  </tr>
+  <tr>
+    <td>ALTER TABLE</td>
+  </tr>
+</table>
 
----
+<br><br>
 
 **<mark>zadaci za samostalni rad</mark>**
+<br>
 
 ```sql
 -- 1. zadatak
@@ -22,6 +42,7 @@ INSERT INTO FILM
 (BROJ, NASLOV, TIP, GODINA, REZISER, BROJ_DISKOVA)
 VALUES ( (SELECT MAX(BROJ) + 1 FROM FILM;), 'Promise me this', 'comedy', 2007, 21, 4);
 ```
+<br>
 
 ```sql
 -- 2. zadatak
@@ -29,6 +50,7 @@ UPDATE IZNAJMLJIVANJE
 SET DATUM_VRACANJA = SYSDATE
 WHERE CLAN = 8 AND FILM = 53 AND DATUM_IZNAJMLJIVANJA = '6-APR-2017';
 ```
+<br>
 
 ```sql
 -- 3. zadatak
