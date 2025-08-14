@@ -11,6 +11,7 @@ SELECT IME, PREZIME, GODINA_ROD, MESTO_ROD
 FROM GLUMAC
 WHERE BROJ = 50;
 ```
+<br>
 
 ```sql
 -- 2. zadatak
@@ -18,6 +19,7 @@ SELECT IME, PREZIME
 FROM GLUMAC
 WHERE GODINA_ROD > 1920;
 ```
+<br>
 
 ```sql
 -- 3. zadatak
@@ -25,6 +27,7 @@ SELECT BROJ
 FROM IGRA
 WHERE FILM BETWEEN 85 AND 91;
 ```
+<br>
 
 ```sql
 -- 4. zadatak
@@ -32,6 +35,7 @@ SELECT BROJ, NASLOV
 FROM FILM
 WHERE TIP = 'comedy' AND ( AA_NAGRADE IS NOT NULL OR AA_NAGRADE > 0 );
 ```
+<br>
 
 ```sql
 -- 5. zadatak
@@ -39,6 +43,7 @@ SELECT COUNT(*)
 FROM IZNAJMLJIVANJE
 WHERE CLAN = 3;
 ```
+<br>
 
 ```sql
 -- 6. zadatak
