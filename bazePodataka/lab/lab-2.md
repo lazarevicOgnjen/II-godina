@@ -2,19 +2,42 @@
 > **lab 2 - slozeni upiti**
 
 ---
-> **nove komande**
+<br>
 
-- JOIN
-- UNION
-- INTERSECT
-- (NOT) EXISTS
-- MINUS
-- ROWNUM
-- GROUP BY
-- HAVING
----
+<table> 
+  <tr>
+    <th>nove komande</th>
+  </tr>
+  <tr>
+    <td>JOIN</td>
+  </tr>
+  <tr>
+    <td>UNION</td>
+  </tr>
+  <tr>
+    <td>INTERSECT</td>
+  </tr>
+  <tr>
+    <td>(NOT) EXISTS</td>
+  </tr>
+  <tr>
+    <td>MINUS</td>
+  </tr>
+  <tr>
+    <td>ROWNUM</td>
+  </tr>
+  <tr>
+    <td>GROUP BY</td>
+  </tr>
+  <tr>
+    <td>HAVING</td>
+  </tr>
+</table>
+
+<br><br>
 
 **<mark>zadaci za samostalni rad</mark>**
+<br>
 
 ```sql
 -- 1. zadatak I nacin
@@ -27,6 +50,7 @@ SELECT FILM.NASLOV, REZISER.IME, REZISER.PREZIME
 FROM FILM, REZISER
 WHERE FILM.REZISER = REZISER.BROJ;
 ```
+<br>
 
 ```sql
 -- 2. zadatak
@@ -39,6 +63,7 @@ FROM FILM INNER JOIN IGRA ON FILM.BROJ = IGRA.FILM
   INNER JOIN GLUMAC ON GLUMAC.BROJ = IGRA.GLUMAC
 WHERE GLUMAC.IME = 'Mira' AND GLUMAC.PREZIME = 'Banjac';
 ```
+<br>
 
 ```sql
 -- 3. zadatak
