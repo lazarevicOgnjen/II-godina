@@ -1,6 +1,6 @@
 <details>
 <summary><mark>HTML jezik - namena i sintaksa</mark></summary>
-
+<br><br>
 <img width="888" height="557" alt="Screenshot 2025-08-14 160908" src="https://github.com/user-attachments/assets/a9862f65-1a38-404e-b534-296be0295a6d" />
 
 ---
@@ -18,5 +18,6 @@
 ---
 <img width="915" height="550" alt="Screenshot 2025-08-14 161016" src="https://github.com/user-attachments/assets/189611b2-a6d4-4562-b49f-e7d53cca8cca" />
 
-  
 </details>
+
+<br><br><br>
