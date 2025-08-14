@@ -1,3 +1,4 @@
+<br><br>
 > **lab 2 - slozeni upiti**
 
 ---
@@ -48,5 +49,5 @@ SELECT CLAN.BROJ, IME, PREZIME
 FROM CLAN INNER JOIN IZNAJMLJIVANJE ON CLAN.BROJ = IZNAJMLJIVANJE.CLAN;
 ```
 
-
+<br><br>
 
