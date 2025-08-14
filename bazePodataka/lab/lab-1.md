@@ -1,3 +1,4 @@
+<br><br>
 > **lab 1 - prosti upiti**
 > 
 **<mark> zadaci za samostalni rad </mark>**
@@ -54,6 +55,4 @@ FROM FILM
 WHERE TIP = 'comedy' AND ( AA_NAGRADE IS NOT NULL OR AA_NAGRADE > 0 ) AND NOT LOWER(NASLOV) LIKE '%uncle%' AND GODINA > 1970;
 ```
 
-
-
-
+<br><br>
