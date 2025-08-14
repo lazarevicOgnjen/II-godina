@@ -1,3 +1,4 @@
+<br><br>
 > **lab 3 - azuriranje podataka, pogledi i indeksi**
 
 ---
@@ -45,3 +46,5 @@ DELETE FROM CLAN WHERE BROJ = 8;
 ALTER TABLE IZNAJMLJIVANJE ADD CONSTRAINT IZNAJMLJIVANJE_CLAN_FK FOREIGN KEY (CLAN) REFERENCES CLAN(BROJ);
 
 ```
+
+<br><br>
