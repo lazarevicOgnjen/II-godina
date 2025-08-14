@@ -1,4 +1,5 @@
 <br><br>
+
 <details>
 <summary><mark>HTML jezik - namena i sintaksa</mark></summary>
 <br>
@@ -20,5 +21,7 @@
 <img width="915" height="550" alt="Screenshot 2025-08-14 161016" src="https://github.com/user-attachments/assets/189611b2-a6d4-4562-b49f-e7d53cca8cca" />
 
 </details>
+
+
 
 <br><br>
