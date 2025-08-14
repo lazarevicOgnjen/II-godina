@@ -1,5 +1,9 @@
 <br><br>
 
+> **pitanja sa ispita**
+
+<br><br>
+
 <details>
 <summary><mark>HTML jezik - namena i sintaksa</mark></summary>
 <br>
