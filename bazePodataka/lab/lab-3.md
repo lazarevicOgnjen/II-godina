@@ -1,7 +1,6 @@
 <br><br>
 > **lab 3 - azuriranje podataka, pogledi i indeksi**
 
----
 <br>
 
 <table>
@@ -34,6 +33,7 @@
 <br><br>
 
 **<mark>zadaci za samostalni rad</mark>**
+
 <br>
 
 ```sql
