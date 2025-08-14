@@ -1,7 +1,6 @@
 <br><br>
 > **lab 2 - slozeni upiti**
 
----
 <br>
 
 <table> 
@@ -37,6 +36,7 @@
 <br><br>
 
 **<mark>zadaci za samostalni rad</mark>**
+
 <br>
 
 ```sql
