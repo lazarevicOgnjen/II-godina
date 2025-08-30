@@ -38,9 +38,9 @@
 
   <br>
 
-  **```class```** - <mark>skupovi podataka i funkcija</mark> (metoda) koje rade nad tim podacima
+  **```class```** - <mark>skupovi podataka i funkcija</mark> (metoda) koje rade nad tim podacima, podaci u klasi se čuvaju na <mark>heap-u</mark>, a promenljive klasa čuvaju reference na te podatke
   <br><br>
-  **```struct```** - slične klasama, ali su <mark>vrednosni tipovi</mark> i lakše za korišćenje kod manjih, jednostavnijih podataka
+  **```struct```** - slične klasama, ali su <mark>vrednosni tipovi</mark> i lakše za korišćenje kod manjih, jednostavnijih podataka, podaci se čuvaju direktno (kopiraju se), tj. "vrednosno", obično na <mark>stack-u</mark>
   <br><br>
   **```enum```** -  predstavljaju <mark>skup imenovanih konstantnih vrednosti</mark>, korisne za definisanje ograničenih opcija, takodje vrednosni tip
   
