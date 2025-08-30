@@ -7,8 +7,6 @@
 <details>
   <summary>KLASE</summary>
 
-<br>
-
 **```System.Object```** <br>
 **```System.ValueType```** <br>
 **```System.String```**
@@ -21,9 +19,7 @@
 <details>
   <summary>KOMANDE</summary>
 
-<br>
-
-**```Console.WriteLine("Hello world!")```** <br>
+**```Console.WriteLine()```** <br>
 **```Console.Write()```** <br>
 **```Console.ReadLine()```**
 
@@ -39,8 +35,6 @@
   <details>
     <summary>referentni</summary>
 
-  <br>
-
   **```class```** <br>
   **```delegate```** <br>
   **```interface```**
@@ -49,8 +43,6 @@
 
   <details>
     <summary>vrednosni</summary>
-
-  <br>
 
   **```struct```** <br>
   **```enum```**
