@@ -16,7 +16,7 @@
  
 </details>
 
----
+
 
 <details>
   <summary>KOMANDE</summary>
@@ -31,7 +31,7 @@
 
 </details>
 
----
+
 
 <details>
   <summary>VRSTE PODATAKA</summary>
