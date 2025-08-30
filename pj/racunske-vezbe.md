@@ -39,14 +39,14 @@
     <th>Opis</th>
   </tr>
   <td>Console.WriteLine("Hello world!")</td>
-  <td>prikazuje vrednost iz zagrade u konzoli i zatim prelazi u novi red</td>
+  <td><mark>prikazuje vrednost</mark> iz zagrade u konzoli i zatim <mark>prelazi</mark> u novi red</td>
   </tr>
   <tr>
     <td>Console.Write()</td>
-    <td>isto samo ne prelazi u novi red</td>
+    <td>isto samo <mark>ne prelazi</mark> u novi red</td>
   <tr>
     <td>Console.ReadLine()</td>
-    <td>čita tekstualni unos korisnika sa tastature, čekajući da se pritisne Enter. Vraća uneti tekst kao string i često se koristi za pauziranje programa radi prikaza rezultata ili prihvatanje korisničkog unosa</td>
+    <td><mark>čita tekstualni unos</mark> korisnika sa tastature, čekajući da se pritisne Enter. Vraća uneti tekst kao string i često se koristi za <mark>pauziranje programa</mark> radi prikaza rezultata ili prihvatanje korisničkog unosa</td>
   </tr>
 </table>
 
