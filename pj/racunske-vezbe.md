@@ -45,3 +45,5 @@
   **```enum```** -  predstavljaju <mark>skup imenovanih konstantnih vrednosti</mark>, korisne za definisanje ograničenih opcija, takodje vrednosni tip
   
 </details>
+
+<br><br>
