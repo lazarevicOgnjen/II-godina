@@ -14,8 +14,6 @@
  
 </details>
 
-<br>
-
 <details>
   <summary>KOMANDE</summary>
 
@@ -24,8 +22,6 @@
 **```Console.ReadLine()```**
 
 </details>
-
-<br>
 
 <details>
   <summary>VRSTE PODATAKA</summary>
