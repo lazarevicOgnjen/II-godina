@@ -30,3 +30,18 @@
 **```Console.ReadLine()```** - <mark>čita tekstualni unos</mark> korisnika sa tastature, čekajući da se pritisne Enter. Vraća uneti tekst kao string i često se koristi za <mark>pauziranje programa</mark> radi prikaza rezultata ili prihvatanje korisničkog unosa
 
 </details>
+
+---
+
+<details>
+  <summary>VRSTE PODATAKA</summary>
+
+  <br>
+
+  **```class```** - <mark>skupovi podataka i funkcija</mark> (metoda) koje rade nad tim podacima
+  <br><br>
+  **```struct```** - su slične klasama, ali su <mark>vrednosni tipovi</mark> i lakše za korišćenje kod manjih, jednostavnijih podataka
+  <br><br>
+  **```enum```** -  predstavljaju <mark>skup imenovanih konstantnih vrednosti</mark>, korisne za definisanje ograničenih opcija
+  
+</details>
