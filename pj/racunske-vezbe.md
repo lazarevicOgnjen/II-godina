@@ -6,7 +6,7 @@
 
 <table>
   <tr>
-    <th>Komande</th>
+    <th>Komanda</th>
     <th>Opis</th>
   </tr>
   <td>Console.WriteLine("Hello world!")</td>
