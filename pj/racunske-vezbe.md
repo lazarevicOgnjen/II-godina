@@ -13,6 +13,9 @@
   <td>prikazuje vrednost iz zagrade u konzoli i zatim prelazi u novi red</td>
   </tr>
   <tr>
+    <td>Console.Write()</td>
+    <td>isto samo ne prelazi u novi red</td>
+  <tr>
     <td>Console.ReadLine()</td>
     <td>čita tekstualni unos korisnika sa tastature, čekajući da se pritisne Enter. Vraća uneti tekst kao string i često se koristi za pauziranje programa radi prikaza rezultata ili prihvatanje korisničkog unosa</td>
   </tr>
