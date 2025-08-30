@@ -44,6 +44,10 @@
   <br>
 
   **```class```** - <mark>skupovi podataka i funkcija</mark> (metoda) koje rade nad tim podacima. Podaci u klasi se čuvaju na <mark>heap-u</mark>, a promenljive klasa čuvaju reference na te podatke
+  <br><br>
+  **```delegate```** -  tip podataka koji predstavlja <mark>referencu na metodu</mark> sa određenim potpisom (parametri i povratna vrednost). Omogućava da se metoda pozove dinamički, kao argument drugoj metodi ili kao povratna vrednost.
+  <br><br>
+  **```interface```** - ugovor (skup metoda i osobina) koje klasa ili struktura mora implementirati. <mark>Ne sadrži implementaciju, već definiše šta objekat treba da radi.</mark>
      
   </details>
 
