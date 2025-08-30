@@ -40,8 +40,8 @@
 
   **```class```** - <mark>skupovi podataka i funkcija</mark> (metoda) koje rade nad tim podacima
   <br><br>
-  **```struct```** - su slične klasama, ali su <mark>vrednosni tipovi</mark> i lakše za korišćenje kod manjih, jednostavnijih podataka
+  **```struct```** - slične klasama, ali su <mark>vrednosni tipovi</mark> i lakše za korišćenje kod manjih, jednostavnijih podataka
   <br><br>
-  **```enum```** -  predstavljaju <mark>skup imenovanih konstantnih vrednosti</mark>, korisne za definisanje ograničenih opcija
+  **```enum```** -  predstavljaju <mark>skup imenovanih konstantnih vrednosti</mark>, korisne za definisanje ograničenih opcija, takodje vrednosni tip
   
 </details>
