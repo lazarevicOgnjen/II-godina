@@ -9,8 +9,8 @@
 
 <br>
 
-**```System.Object```**
-**```System.ValueType```**
+**```System.Object```** |
+**```System.ValueType```** |
 **```System.String```**
 
  
@@ -23,8 +23,8 @@
 
 <br>
 
-**```Console.WriteLine("Hello world!")```**
-**```Console.Write()```**
+**```Console.WriteLine("Hello world!")```** |
+**```Console.Write()```** |
 **```Console.ReadLine()```**
 
 </details>
@@ -41,8 +41,8 @@
 
   <br>
 
-  **```class```**
-  **```delegate```**
+  **```class```** |
+  **```delegate```** |
   **```interface```**
      
   </details>
@@ -52,7 +52,7 @@
 
   <br>
 
-  **```struct```**
+  **```struct```** |
   **```enum```**
     
   </details>
