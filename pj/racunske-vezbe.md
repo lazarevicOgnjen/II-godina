@@ -10,15 +10,13 @@
 <br>
 
 **```System.Object```**
-<br><br>
 **```System.ValueType```**
-<br><br>
 **```System.String```**
 
  
 </details>
 
-
+<br>
 
 <details>
   <summary>KOMANDE</summary>
@@ -26,14 +24,12 @@
 <br>
 
 **```Console.WriteLine("Hello world!")```**
-<br><br>
 **```Console.Write()```**
-<br><br>
 **```Console.ReadLine()```**
 
 </details>
 
-
+<br>
 
 <details>
   <summary>VRSTE PODATAKA</summary>
@@ -46,9 +42,7 @@
   <br>
 
   **```class```**
-  <br><br>
   **```delegate```**
-  <br><br>
   **```interface```**
      
   </details>
@@ -59,7 +53,6 @@
   <br>
 
   **```struct```**
-  <br><br>
   **```enum```**
     
   </details>
