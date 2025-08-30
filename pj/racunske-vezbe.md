@@ -9,9 +9,11 @@
 
 <br>
 
-**```System.Object```** - <mark>osnovna klasa,</mark> System. Object je koren hijerarhije nasleđivanja u .NET-u, i sve klase nasleđuju njegove metode i osobine
+**```System.Object```**
 <br><br>
-**```System.ValueType```** - je klasa za sve <mark>vrednosne tipove podataka</mark> u C#, izvedena je iz System.Object.  Primeri vrednosnih tipova su <mark>int, float, bool, struct, enum</mark> i drugi. Vrednosni tipovi se kopiraju po vrednosti, što znači da kada se proslede kao argumenti funkcijama, pravi se <mark>kopija podataka, a ne referenca.</mark>
+**```System.ValueType```**
+<br><br>
+**```System.String```**
 
  
 </details>
@@ -23,11 +25,11 @@
 
 <br>
 
-**```Console.WriteLine("Hello world!")```** - <mark>prikazuje vrednost</mark> iz zagrade u konzoli i zatim <mark>prelazi</mark> u novi red
+**```Console.WriteLine("Hello world!")```**
 <br><br>
-**```Console.Write()```** - isto samo <mark>ne prelazi</mark> u novi red
+**```Console.Write()```**
 <br><br>
-**```Console.ReadLine()```** - <mark>čita tekstualni unos</mark> korisnika sa tastature, čekajući da se pritisne Enter. Vraća uneti tekst kao string i često se koristi za <mark>pauziranje programa</mark> radi prikaza rezultata ili prihvatanje korisničkog unosa
+**```Console.ReadLine()```**
 
 </details>
 
@@ -43,11 +45,11 @@
 
   <br>
 
-  **```class```** - <mark>skupovi podataka i funkcija</mark> (metoda) koje rade nad tim podacima. Podaci u klasi se čuvaju na <mark>heap-u</mark>, a promenljive klasa čuvaju reference na te podatke
+  **```class```**
   <br><br>
-  **```delegate```** -  tip podataka koji predstavlja <mark>referencu na metodu</mark> sa određenim potpisom (parametri i povratna vrednost). Omogućava da se metoda pozove dinamički, kao argument drugoj metodi ili kao povratna vrednost.
+  **```delegate```**
   <br><br>
-  **```interface```** - ugovor (skup metoda i osobina) koje klasa ili struktura mora implementirati. <mark>Ne sadrži implementaciju, već definiše šta objekat treba da radi.</mark>
+  **```interface```**
      
   </details>
 
@@ -56,9 +58,9 @@
 
   <br>
 
-  **```struct```** - slične klasama, ali su <mark>vrednosni tipovi</mark> i lakše za korišćenje kod manjih, jednostavnijih podataka. Podaci se čuvaju direktno (kopiraju se), tj. "vrednosno", obično na <mark>stack-u</mark>
+  **```struct```**
   <br><br>
-  **```enum```** -  predstavljaju <mark>skup imenovanih konstantnih vrednosti</mark>, korisne za definisanje ograničenih opcija
+  **```enum```**
     
   </details>
   
