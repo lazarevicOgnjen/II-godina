@@ -1,9 +1,9 @@
 ```vhdl
 file Fout: TEXT open WRITE_MODE is "output";
-   file Fin: TEXT open READ_MODE is "input";
-   variable current_wline : line;
-   variable current_rline : line; 
-   variable current_aux : std_logic_vector(3 downto 0);
+file Fin: TEXT open READ_MODE is "input";
+variable current_wline : line;
+variable current_rline : line; 
+variable current_aux : std_logic_vector(3 downto 0);
 ```
 
 <br>
