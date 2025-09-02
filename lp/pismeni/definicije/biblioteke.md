@@ -1,5 +1,10 @@
 ```vhdl
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_textio.all;
 
+library STD;
+use STD.textio.all;
 ```
 
 <br>
@@ -10,5 +15,9 @@
 
 Znači, ove linije omogućavaju korišćenje osnovnih logičkih tipova i funkcija za rad sa digitalnim signalima i tekstualnim fajlovima u VHDL-u.
 
-<br>
+---
 
+- `library STD;` učitava standardnu biblioteku VHDL-a.
+- `use STD.textio.all;` omogućava korišćenje paketa `textio` koji sadrži funkcije i tipove za čitanje i pisanje ASCII tekstualnih fajlova u VHDL-u.
+
+Ovaj paket se koristi za ulazno-izlazne operacije nad tekstualnim fajlovima, npr. da se čitaju linije iz fajla, i dalje obrađuju unutar testbenča ili simulacije.
