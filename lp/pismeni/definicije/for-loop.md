@@ -1,5 +1,15 @@
 ```vhdl
-
+for i in 0 to 15 loop
+	readline(Fin, current_rline);
+	read(current_rline, current_aux); 
+        ABCD_TB<=current_aux;
+	wait for 10 ns;
+	write(current_wline, string'("ABCD="));
+	write(current_wline, ABCD_TB);
+	write(current_wline, string'("F="));
+	write(current_wline, F_TB);
+	writeline(Fout, current_wline);
+end loop;	
 ```
 
 <br>
