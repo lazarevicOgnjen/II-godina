@@ -1,7 +1,7 @@
 ```vhdl
 readline(Fin, current_rline);
-read(current_rline, current_aux);
-ABCD_TB <= current_aux;
+	read(current_rline, current_aux); 
+        ABCD_TB<=current_aux;
 ```
 
 <br>
