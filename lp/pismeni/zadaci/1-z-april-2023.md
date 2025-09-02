@@ -7,30 +7,82 @@
 ```vhdl
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.std_logic_textio.all;
+library std;
+use std.textio.all;
 
+-- Entitet enkodera
 entity encoder_8to3_binary is
-  port (
-    A: in bit_vector(7 downto 0);
-    F: out bit_vector(2 downto 0)
+  port(
+    A : in bit_vector(7 downto 0);
+    F : out bit_vector(2 downto 0)
   );
 end entity;
 
-architecture encoder_arch of encoder_8to3_binary is
+-- Arhitektura enkodera - logika prema tabeli one-hot enkodera
+architecture Behavioral of encoder_8to3_binary is
 begin
   process(A)
   begin
-    case A is
-      when "00000001" => F <= "000"; -- A(0)
-      when "00000010" => F <= "001"; -- A(1)
-      when "00000100" => F <= "010"; -- A(2)
-      when "00001000" => F <= "011"; -- A(3)
-      when "00010000" => F <= "100"; -- A(4)
-      when "00100000" => F <= "101"; -- A(5)
-      when "01000000" => F <= "110"; -- A(6)
-      when "10000000" => F <= "111"; -- A(7)
-      when others => F <= "000"; -- podrazumevano
-    end case;
+    F(0) <= A(1) or A(3) or A(5) or A(7);
+    F(1) <= A(2) or A(3) or A(6) or A(7);
+    F(2) <= A(4) or A(5) or A(6) or A(7);
   end process;
-end architecture;
+end Behavioral;
+
+-- Testbenč za enkoder
+entity encoder_8to3_binary_tb is
+end entity;
+
+architecture Behavioral_tb of encoder_8to3_binary_tb is
+  component encoder_8to3_binary is
+    port(
+      A : in bit_vector(7 downto 0);
+      F : out bit_vector(2 downto 0)
+    );
+  end component;
+
+  signal A: bit_vector(7 downto 0);
+  signal F: bit_vector(2 downto 0);
+
+  file fin: text open read_mode is "ulaz.txt";
+  file fout: text open write_mode is "izlaz.txt";
+begin
+
+  -- Instanca enkodera
+  UUT: encoder_8to3_binary port map (
+    A => A,
+    F => F
+  );
+
+  -- Proces koji čita ulaz i piše izlaz
+  stim_proc: process
+    variable input_line: line;
+    variable output_line: line;
+    variable input_vec: bit_vector(7 downto 0);
+  begin
+    write(output_line, string'("A(7 downto 0), F(2 downto 0)"));
+    writeline(fout, output_line);
+
+    while not endfile(fin) loop
+      readline(fin, input_line);
+      read(input_line, input_vec);
+      A <= input_vec;
+      wait for 10 ns;  -- čekanje da se baš signal postavi
+
+      write(output_line, input_vec);
+      write(output_line, string'(" -> "));
+      write(output_line, F);
+      writeline(fout, output_line);
+    end loop;
+
+    wait; -- kraj testa
+  end process;
+
+end Behavioral_tb;
+
 
 ```
+
+
+
