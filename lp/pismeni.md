@@ -16,6 +16,16 @@ Evo čemu služe te tri linije:
 Znači, ove linije omogućavaju korišćenje osnovnih logičkih tipova i funkcija za rad sa digitalnim signalima i tekstualnim fajlovima u VHDL-u.[^1][^2][^3]
 <span style="display:none">[^10][^4][^5][^6][^7][^8][^9]</span>
 
+# a ovo -> library STD;
 
+use STD.textio.all;
+
+Kratko:
+
+- `library STD;` učitava standardnu biblioteku VHDL-a.
+- `use STD.textio.all;` omogućava korišćenje paketa `textio` koji sadrži funkcije i tipove za čitanje i pisanje ASCII tekstualnih fajlova u VHDL-u.
+
+Ovaj paket se koristi za ulazno-izlazne operacije nad tekstualnim fajlovima, npr. da se čitaju linije iz fajla, i dalje obrađuju unutar testbenča ili simulacije.[^2][^4]
+<span style="display:none">[^1][^3][^5][^6]</span>
 
 </details>
