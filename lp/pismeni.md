@@ -1,6 +1,4 @@
-<details>
-  <summary>Biblioteke - fajlovi</summary>
-  <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # sta ovo omogucava (cemu to sluzi) -> Library IEEE;
 
@@ -27,5 +25,3 @@ Kratko:
 
 Ovaj paket se koristi za ulazno-izlazne operacije nad tekstualnim fajlovima, npr. da se čitaju linije iz fajla, i dalje obrađuju unutar testbenča ili simulacije.[^2][^4]
 <span style="display:none">[^1][^3][^5][^6]</span>
-
-</details>
