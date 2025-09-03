@@ -24,6 +24,8 @@ process(A)
         end if;
 ```
 
+<br>
+
 > **selekciona**
 
 ```vhdl
@@ -38,6 +40,8 @@ with A select
              "111" when "10000000",
              "XXX" when others;
 ```
+
+<br>
 
 > **uslovna**
 
