@@ -1,27 +1,33 @@
-> **sekvencijalna**
+> **komponentna**
 
 ```vhdl
-process(A)
-    begin
-        if A = "00000001" then
-            Y <= "000";
-        elsif A = "00000010" then
-            Y <= "001";
-        elsif A = "00000100" then
-            Y <= "010";
-        elsif A = "00001000" then
-            Y <= "011";
-        elsif A = "00010000" then
-            Y <= "100";
-        elsif A = "00100000" then
-            Y <= "101";
-        elsif A = "01000000" then
-            Y <= "110";
-        elsif A = "10000000" then
-            Y <= "111";
-        else
-            Y <= "XXX"; -- neodređeno za ostale slučajeve
-        end if;
+component INV1 is
+port (A : in bit;
+ F : out bit);
+end component;
+
+component AND3 is
+port (A,B,C : in bit;
+ F : out bit);
+end component;
+
+component OR4 is
+port (A,B,C,D : in bit;
+ F : out bit);
+end component;
+
+begin
+
+U1 : INV1 port map (A=>A, F=>An);
+U2 : INV1 port map (A=>B, F=>Bn);
+U3 : INV1 port map (A=>C, F=>Cn);
+
+U4 : AND3 port map (A=>An, B=>Bn, C=>C, F=>m1);
+U5 : AND3 port map (A=>An, B=>B, C=>C, F=>m3);
+U6 : AND3 port map (A=>A, B=>Bn, C=>Cn, F=>m4);
+U7 : AND3 port map (A=>A, B=>B, C=>Cn, F=>m6);
+
+U8 : OR4 port map (A=>m1, B=>m3, C=>m4, D=>m6, F=>F);
 ```
 
 <br>
