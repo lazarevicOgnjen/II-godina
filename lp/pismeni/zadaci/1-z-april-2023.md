@@ -20,21 +20,24 @@ entity encoder_8to3_binary is
 end entity;
 
 -- Arhitektura enkodera - logika prema tabeli one-hot enkodera
-architecture Behavioral of encoder_8to3_binary is
+architecture encoder_8to3_binary_arch of encoder_8to3_binary is
 begin
-  process(A)
-  begin
-    F(0) <= A(1) or A(3) or A(5) or A(7);
-    F(1) <= A(2) or A(3) or A(6) or A(7);
-    F(2) <= A(4) or A(5) or A(6) or A(7);
-  end process;
-end Behavioral;
+  with (A) select
+		F <= "00000001" when "000",
+			 	"00000010" when "001",
+			 "00000100" when "010",
+			 "00001000" when "011",
+			 "00010000" when "100",
+			 "00100000" when "101",
+			 "01000000" when "110",
+			 "10000000" when "111";
+end architecture;
 
 -- Testbenč za enkoder
 entity encoder_8to3_binary_tb is
 end entity;
 
-architecture Behavioral_tb of encoder_8to3_binary_tb is
+architecture encoder_8to3_binary_tb_arch of encoder_8to3_binary_tb is
   component encoder_8to3_binary is
     port(
       A : in bit_vector(7 downto 0);
@@ -79,7 +82,7 @@ begin
     wait; -- kraj testa
   end process;
 
-end Behavioral_tb;
+end architecture;
 
 
 ```
