@@ -1,4 +1,4 @@
-> **konkurentna**
+> **sekvencijalna**
 
 ```vhdl
 process(A)
@@ -57,7 +57,24 @@ Y <= "000" when A = "00000001" else
          "XXX";
 ```
 
+<br>
 
+> **konkurentna**
+
+```vhdl
+An <= not A;
+Bn <= not B;
+Cn <= not C;
+Dn <= not D;
+
+s1 <= An and Bn and Cn and D;
+s2 <= An and Bn and C and D;
+s3 <= A and Bn and Cn and D;
+s4 <= A and Bn and C and D;
+
+F <= s1 or s2 or s3 or s4;
+
+```
 
 
 
