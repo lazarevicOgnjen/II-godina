@@ -4,7 +4,7 @@
 
 <img width="792" height="591" alt="sl" src="https://github.com/user-attachments/assets/dda82863-dd3b-4983-b5d8-d7d094719b7b" />
 
-<br>
+---
 
 <mark>NIJE ZAVRSEN</mark>
 
