@@ -8,8 +8,9 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_textio.all;
-library std;
-use std.textio.all;
+
+library STD;
+use STD.textio.all;
 
 -- Entitet enkodera
 entity encoder_8to3_binary is
