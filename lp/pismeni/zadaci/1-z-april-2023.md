@@ -60,7 +60,7 @@ begin
   );
 
   -- Proces koji čita ulaz i piše izlaz
-  stim_proc: process
+  STIMULUS: process
     variable input_line: line;
     variable output_line: line;
     variable input_vec: bit_vector(7 downto 0);
