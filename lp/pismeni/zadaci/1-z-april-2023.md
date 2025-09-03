@@ -68,7 +68,7 @@ begin
     write(output_line, string'("A(7 downto 0), F(2 downto 0)"));
     writeline(fout, output_line);
 
-    while not endfile(fin) loop
+    for i in 0 to 7 loop
       readline(fin, input_line);
       read(input_line, input_vec);
       A <= input_vec;
