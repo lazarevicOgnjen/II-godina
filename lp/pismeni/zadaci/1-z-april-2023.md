@@ -46,17 +46,17 @@ architecture encoder_8to3_binary_tb_arch of encoder_8to3_binary_tb is
     );
   end component;
 
-  signal A: bit_vector(7 downto 0);
-  signal F: bit_vector(2 downto 0);
+  signal A_TB: bit_vector(7 downto 0);
+  signal F_TB: bit_vector(2 downto 0);
 
   file fin: text open read_mode is "ulaz.txt";
   file fout: text open write_mode is "izlaz.txt";
 begin
 
   -- Instanca enkodera
-  UUT: encoder_8to3_binary port map (
-    A => A,
-    F => F
+  DUT1: encoder_8to3_binary port map (
+    A => A_TB,
+    F => F_TB
   );
 
   -- Proces koji čita ulaz i piše izlaz
@@ -71,12 +71,12 @@ begin
     for i in 0 to 7 loop
       readline(fin, input_line);
       read(input_line, input_vec);
-      A <= input_vec;
+      A_TB <= input_vec;
       wait for 10 ns;  -- čekanje da se baš signal postavi
 
-      write(output_line, input_vec);
+      write(output_line, A_TB);
       write(output_line, string'(" -> "));
-      write(output_line, F);
+      write(output_line, F_TB);
       writeline(fout, output_line);
     end loop;
 
