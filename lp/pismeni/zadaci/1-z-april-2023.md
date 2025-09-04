@@ -24,7 +24,6 @@ end entity;
 architecture encoder_8to3_binary_arch of encoder_8to3_binary is
 begin
   with (A) select
-		with (A) select
 		F <= "000" when "00000001",
              "001" when "00000010",
             "010" when "00000100",
