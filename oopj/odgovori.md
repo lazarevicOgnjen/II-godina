@@ -63,6 +63,13 @@
 # 13. Inkrementalni razvoj/Inkremantalni model razvoja softvera [4]
 <img width="875" height="562" alt="7" src="https://github.com/user-attachments/assets/637184ec-ea2d-4515-a817-dfffa8a5b467" />
 
+<br><br>
+
+# Stanja sa dubokom istorijom [4]
+<img width="712" height="203" alt="8" src="https://github.com/user-attachments/assets/719af807-9194-424c-9e0e-e3760be1cca4" />
+
+<br><br>
+
 
 
 
