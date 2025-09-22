@@ -32,6 +32,8 @@
 <br><br>
 
 # 6. Dati dijagram klasa i objasniti projektni obrazac Bridge. Dati dijagram klasa primera upotrebe ovog obrazca [5]
+ili
+# 7. Objasniti projektni obrazac Bridge i dati primer korišćenja [5]
 <img width="827" height="357" alt="3" src="https://github.com/user-attachments/assets/6a90ab58-4659-47cc-b439-b794599c46ae" />
 
 <br><br>
