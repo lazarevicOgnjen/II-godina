@@ -25,6 +25,8 @@
 <br><br>
 
 # 5. Dati dijagram klasa i objasniti projektni obrazac Observer. Dati dijagram klasa primera upotrebe ovog obrazca [5]
+ili
+# Objasniti projektni obrazac Observer i dati primer korišćenja [5]
 <img width="822" height="217" alt="1" src="https://github.com/user-attachments/assets/65af7cd6-7934-46ec-84ac-159fb00a1419" />
 
 <img width="817" height="567" alt="2" src="https://github.com/user-attachments/assets/d10e916c-6156-406d-8f57-d9d8cb3fadf3" />
