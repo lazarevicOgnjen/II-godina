@@ -1,7 +1,7 @@
 2019 - 2024
 
 1. Standardni stereotipovi artifakata kod dijagrama komponenta \[7] - JUN II 2024
-2. Dati dijagram klasa i objasniti projektni obrazac Command. Dati dijagram klasa primera upotrebe ovog obrazca \[6]
+2. Dati dijagram klasa i objasniti projektni obrazac Command. Dati dijagram klasa primera upotrebe ovog obrazca \[6] - Oktobar II 2024
 3. Sta je MFC? Objasniti arhitekturu 4 klasa za razvoj Windows aplikacija \[6]
 4. Dati dijagram klasa i objasniti projektni obrazac Composite. Dati dijagram klasa primera upotrebe ovog obrazca \[6]
 5. Dati dijagram klasa i objasniti projektni obrazac Observer. Dati dijagram klasa primera upotrebe ovog obrazca \[5]
@@ -27,5 +27,6 @@
 25. Nabrojati vrste akcija kod dijagrama aktivnosti / Šta su aktivnosti a šta akcije? Navesti neke vrste akcija \[2]
 26. Elementi dijagrama aktivnosti \[2]
 27. Dati dijagram klasa i objasniti projektni obrazac Factory Method. Dati dijagram klasa primera upotrebe ovog obrazca \[2]
+
 
 
