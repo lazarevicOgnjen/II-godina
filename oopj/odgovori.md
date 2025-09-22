@@ -49,8 +49,12 @@
 
 <br><br>
 
+# 11. Šta su to antiobrasci? Navesti i objasniti primer/primere antiobrasca [4]
+<img width="792" height="370" alt="5" src="https://github.com/user-attachments/assets/9f51b2ab-e438-4628-9a5d-2d7555d0fd14" />
 
+<img width="796" height="346" alt="6" src="https://github.com/user-attachments/assets/4975d2ea-1c09-4987-8169-b77e26e484bb" />
 
+<br><br>
 
 
 
