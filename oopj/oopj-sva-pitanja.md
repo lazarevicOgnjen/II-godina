@@ -188,7 +188,8 @@
 186. Objasniti projektni obrazac Bridge i dati primer korišćenja.
 187. Nabrojati i opisati elemente prelazaka kod dijagrama stanja.
 188. Inkrementalni model razvoja softvera.
-189. Ukrasi vidljivosti kod veze (link).
+189. Ukrasi vidljivosti kod veze.
 190. Objasniti projektni obrazac Bridge i dati primer korišćenja.
 191. Objasniti projektni obrazac Command i dati primer korišćenja.
 192. Definicija projektnih obrazaca. Katalogizacija projektnih obrazaca. GoF katalog projektnih obrazaca.
+
