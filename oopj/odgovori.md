@@ -18,3 +18,9 @@
 <img width="858" height="346" alt="3 1p" src="https://github.com/user-attachments/assets/2f4870a5-bcfc-47a7-97fb-4752479b1275" />
 
 <br><br>
+
+# Dati dijagram klasa i objasniti projektni obrazac Composite. Dati dijagram klasa primera upotrebe ovog obrazca [6]
+<img width="823" height="513" alt="4p" src="https://github.com/user-attachments/assets/35e69bde-ed9c-4000-a3cd-0a4dad34108b" />
+
+<br><br>
+
