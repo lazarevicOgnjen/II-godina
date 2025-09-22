@@ -1,4 +1,4 @@
-<img width="835" height="358" alt="image" src="https://github.com/user-attachments/assets/6ea1e8be-b4eb-4ddc-ac7a-97c3f43d2d28" /><br><br>
+<br><br>
 
 # 1. Standardni stereotipovi artifakata kod dijagrama komponenta [7]
 <img width="741" height="282" alt="1p" src="https://github.com/user-attachments/assets/48aadadb-6f25-4065-bee4-5197a73bc85c" />
@@ -59,5 +59,12 @@
 # 12. Kontekstni interakcije kod dijagrama interakcije [4]
 
 <br><br>
+
+# 13. Inkrementalni razvoj/Inkremantalni model razvoja softvera [4]
+<img width="875" height="562" alt="7" src="https://github.com/user-attachments/assets/637184ec-ea2d-4515-a817-dfffa8a5b467" />
+
+
+
+
 
 
