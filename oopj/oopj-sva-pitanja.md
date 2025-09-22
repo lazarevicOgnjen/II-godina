@@ -1,6 +1,6 @@
 2019 - 2024
 
-1. Relacije koje se sreću u dijagramima rasporedivanja
+1. Relacije koje se sreću u dijagramima rasporedivanja - JUN II 2024
 2. Standardni stereotipovi artifakata kod dijagrama komponenta.
 3. Prednosti prototipnog modela razvoja softvera.
 4. Dati dijagram klasa i objasniti projektni obrazac Singleton. Dati dijagram klasa primera upotrebe ovog obrazca.
@@ -192,4 +192,5 @@
 190. Objasniti projektni obrazac Bridge i dati primer korišćenja.
 191. Objasniti projektni obrazac Command i dati primer korišćenja.
 192. Definicija projektnih obrazaca. Katalogizacija projektnih obrazaca. GoF katalog projektnih obrazaca.
+
 
