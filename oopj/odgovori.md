@@ -42,7 +42,7 @@
 
 <br><br>
 
-# 9. Objasniti koncept poruke kod MS Windows operativnog sistema. Objasniti strukturu poruke [6]
+**9. Objasniti koncept poruke kod MS Windows operativnog sistema. Objasniti strukturu poruke [6]**
 
 <br><br>
 
@@ -58,7 +58,7 @@
 
 <br><br>
 
-# 12. Kontekstni interakcije kod dijagrama interakcije [4]
+**12. Kontekstni interakcije kod dijagrama interakcije [4]**
 
 <br><br>
 
@@ -67,12 +67,12 @@
 
 <br><br>
 
-# Stanja sa dubokom istorijom [4]
+# 14. Stanja sa dubokom istorijom [4]
 <img width="712" height="203" alt="8" src="https://github.com/user-attachments/assets/719af807-9194-424c-9e0e-e3760be1cca4" />
 
 <br><br>
 
-
+**16. Objasniti strukturu poruke kod MS Windows operativnog sistema i objasniti svaku od komponenti [4]**
 
 
 
