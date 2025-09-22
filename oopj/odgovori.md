@@ -25,8 +25,8 @@
 <br><br>
 
 # 5. Dati dijagram klasa i objasniti projektni obrazac Observer. Dati dijagram klasa primera upotrebe ovog obrazca [5]
-ili
-# Objasniti projektni obrazac Observer i dati primer korišćenja [5]
+<mark>ili</mark>
+**8. Objasniti projektni obrazac Observer i dati primer korišćenja [5]**
 <img width="822" height="217" alt="1" src="https://github.com/user-attachments/assets/65af7cd6-7934-46ec-84ac-159fb00a1419" />
 
 <img width="817" height="567" alt="2" src="https://github.com/user-attachments/assets/d10e916c-6156-406d-8f57-d9d8cb3fadf3" />
@@ -34,12 +34,14 @@ ili
 <br><br>
 
 # 6. Dati dijagram klasa i objasniti projektni obrazac Bridge. Dati dijagram klasa primera upotrebe ovog obrazca [5]
-ili
-# 7. Objasniti projektni obrazac Bridge i dati primer korišćenja [5]
+<mark>ili</mark>
+**7. Objasniti projektni obrazac Bridge i dati primer korišćenja [5]**
 <img width="827" height="357" alt="3" src="https://github.com/user-attachments/assets/6a90ab58-4659-47cc-b439-b794599c46ae" />
 
 <br><br>
 
+# 9. Objasniti koncept poruke kod MS Windows operativnog sistema. Objasniti strukturu poruke [6]
 
+<br><br>
 
 
