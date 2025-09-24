@@ -16,6 +16,8 @@
 
 # trougao
 
+Uslov da je nesto trougao: *a>0 && b>0 && c>0 && a+b>c && b+c>a && c+a>b*
+
 **Heronova formula**, najpoznatiji način da se izračuna površina bilo kog trougla kad znaš sve tri stranice.
 
 Koraci:
@@ -32,4 +34,3 @@ kod:
 double s = (a + b + c) / 2;
 return sqrt(s * (s - a) * (s - b) * (s - c));
 ```
-
