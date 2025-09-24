@@ -4,11 +4,28 @@
 
 # inline funkcija
 
-1. Obična funkcija  
+1. Obična funkcija
+   ```cpp
+   double P(double a, double b, double c) {
+	if (a>0 && b>0 && c>0 && a+b>c && b+c>a && c+a>b) 
+	{
+		double s = (a + b + c) / 2;
+		return sqrt(s * (s-a) * (s-b) * (s-c));
+	} 
+	else 
+	{
+		return -1;
+	}
+   }
+   ```
    Pozoves funkciju. <br>
    Program skoči do te funkcije, izračuna, vrati se. Skok-gore-skok-dole = malo sporije.
 
-2. Inline funkcija  
+2. Inline funkcija
+   ```cpp
+   inline double P(double a, double b) 
+   { return P(a, b, b); }
+   ```
    Pozoves funkciju. <br>
    Program **iskopira** ceo račun tamo gde si pozvao – nema skakanja, odmah uradi.  
    Brže je, ali svaki put kad pozoveš, iskopira se ceo kod (veći program).
