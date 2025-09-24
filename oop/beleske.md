@@ -7,15 +7,7 @@
 1. Obična funkcija
    ```cpp
    double P(double a, double b, double c) {
-	if (a>0 && b>0 && c>0 && a+b>c && b+c>a && c+a>b) 
-	{
-		double s = (a + b + c) / 2;
-		return sqrt(s * (s-a) * (s-b) * (s-c));
-	} 
-	else 
-	{
-		return -1;
-	}
+	.....
    }
    ```
    Pozoves funkciju. <br>
@@ -23,8 +15,9 @@
 
 2. Inline funkcija
    ```cpp
-   inline double P(double a, double b) 
-   { return P(a, b, b); }
+   inline double P(double a, double b) {
+   	.....
+   }
    ```
    Pozoves funkciju. <br>
    Program **iskopira** ceo račun tamo gde si pozvao – nema skakanja, odmah uradi.  
