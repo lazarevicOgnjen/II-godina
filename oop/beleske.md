@@ -5,11 +5,11 @@
 # inline funkcija
 
 1. Obična funkcija  
-   Ti kažeš: „Izračunaj mi površinu.“  
+   Pozoves funkciju. 
    Program skoči do te funkcije, izračuna, vrati se. Skok-gore-skok-dole = malo sporije.
 
 2. Inline funkcija  
-   Ti kažeš: „Izračunaj mi površinu.“  
+   Pozoves funkciju. 
    Program **iskopira** ceo račun tamo gde si pozvao – nema skakanja, odmah uradi.  
    Brže je, ali svaki put kad pozoveš, iskopira se ceo kod (veći program).
 
