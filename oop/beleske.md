@@ -1,6 +1,6 @@
 <br><br>
 
-- [inline funkcija](#inline-funkcija)
+- [inline funkcija](#inline-funkcija) <br>
 - [trougao](#trougao)
 
 <br><br><br>
