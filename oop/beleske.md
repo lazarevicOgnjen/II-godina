@@ -1,6 +1,9 @@
+<br><br>
+
 - [inline funkcija](#inline-funkcija)
 - [trougao](#trougao)
 
+<br><br><br>
 
 # inline funkcija
 
@@ -23,10 +26,11 @@
    Program **iskopira** ceo račun tamo gde si pozvao – nema skakanja, odmah uradi.  
    Brže je, ali svaki put kad pozoveš, iskopira se ceo kod (veći program).
 
+<br><br>
 
 # trougao
 
-Uslov da je nesto trougao: *a>0 && b>0 && c>0 && a+b>c && b+c>a && c+a>b*
+Uslov da je nesto trougao: ***a>0 && b>0 && c>0 && a+b>c && b+c>a && c+a>b***
 
 **Heronova formula**, najpoznatiji način da se izračuna površina bilo kog trougla kad znaš sve tri stranice.
 
@@ -44,3 +48,5 @@ kod:
 double s = (a + b + c) / 2;
 return sqrt(s * (s - a) * (s - b) * (s - c));
 ```
+
+<br><br>
