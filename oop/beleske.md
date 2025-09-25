@@ -1,11 +1,12 @@
 <br><br>
 
 - [inline funkcija](#inline-funkcija) <br>
-- [trougao](#trougao)
+- [trougao](#trougao) <br>
+- [prosledjivanje vrednosti](#prosledjivanje-vrednosti)
 
 <br><br><br>
 
-# inline funkcija
+# Inline funkcija
 
 1. Obična funkcija
    ```cpp
@@ -28,7 +29,7 @@
 
 <br><br>
 
-# trougao
+# Trougao
 
 Uslov da je nesto trougao: ***a>0 && b>0 && c>0 && a+b>c && b+c>a && c+a>b***
 
@@ -47,6 +48,38 @@ kod:
 ```cpp
 double s = (a + b + c) / 2;
 return sqrt(s * (s - a) * (s - b) * (s - c));
+```
+
+<br><br>
+
+# Prosledjivanje vrednosti
+
+1. Pomocu pokazivaca.
+```cpp
+// pozivamo funkciju
+polar(x, y, &r, &fi);
+```
+
+```cpp
+// deklaracija i definicija funkcije
+void polar(double x, double y, double* r, double* fi) {
+	*r  = sqrt(x*x + y*y);
+	*fi = (x==0 && y==0) ? 0 : atan2(y, x);
+}
+```
+
+2. Pomocu upucivaca (reference).
+```cpp
+// pozivamo funkciju
+polar(x, y, r, fi);
+```
+
+ ```cpp
+// deklaracija i definicija funkcije
+void polar(double x, double y, double& r, double& fi) {
+	r  = sqrt(x*x + y*y);
+	fi = (x==0 && y==0) ? 0 : atan2(y, x);
+}
 ```
 
 <br><br>
