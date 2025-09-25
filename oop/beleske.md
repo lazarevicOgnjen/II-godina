@@ -1,8 +1,11 @@
 <br><br>
 
-- [inline funkcija](#inline-funkcija) <br>
-- [trougao](#trougao) <br>
-- [prosledjivanje vrednosti](#prosledjivanje-vrednosti)
+> [!NOTE]
+> - [inline funkcija](#inline-funkcija)
+>   
+> - [trougao](#trougao)
+>   
+> - [prosledjivanje vrednosti](#prosledjivanje-vrednosti)
 
 <br><br><br>
 
