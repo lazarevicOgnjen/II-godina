@@ -89,7 +89,7 @@ void polar(double x, double y, double& r, double& fi) {
 
 <br><br>
 
-# Povezivanje fajllova
+# Povezivanje fajlova
 
 **File 1**
 ```cpp
