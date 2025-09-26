@@ -101,6 +101,14 @@ int add(int a, int b); // pure declaration: no body
 #endif // ADD_H
 ```
 
+> alternativa
+```cpp
+#pragma once
+int add(int a, int b);
+```
+
+<br>
+
 **File 2**
 ```cpp
 #include "add.h"       // we *implement* what was declared in add.h
@@ -110,6 +118,8 @@ int add(int a, int b)  // full definition
     return a + b;
 }
 ```
+
+<br>
 
 **File 3**
 ```cpp
