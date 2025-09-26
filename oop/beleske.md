@@ -6,6 +6,8 @@
 > - [trougao](#trougao)
 >   
 > - [prosledjivanje vrednosti](#prosledjivanje-vrednosti)
+>
+> - [povezivanje fajlova](#povezivanje-fajlova)
 
 <br><br><br>
 
@@ -84,5 +86,43 @@ void polar(double x, double y, double& r, double& fi) {
 	fi = (x==0 && y==0) ? 0 : atan2(y, x);
 }
 ```
+
+<br><br>
+
+# Povezivanje fajllova
+
+**File 1**
+```cpp
+#ifndef ADD_H          // “include guard” keeps the header from being
+#define ADD_H          // pasted twice into the same translation unit
+
+int add(int a, int b); // pure declaration: no body
+
+#endif // ADD_H
+```
+
+**File 2**
+```cpp
+#include "add.h"       // we *implement* what was declared in add.h
+
+int add(int a, int b)  // full definition
+{
+    return a + b;
+}
+```
+
+**File 3**
+```cpp
+#include <iostream>
+#include "add.h"       // we *use* what was declared in add.h
+
+int main()
+{
+    int x = 3, y = 4;
+    std::cout << x << " + " << y << " = " << add(x, y) << '\n';
+}
+```
+
+
 
 <br><br>
