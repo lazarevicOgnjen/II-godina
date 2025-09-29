@@ -21,8 +21,12 @@ Voda::Voda(float z, int b) : Pice(z, b) {}
 
 Sok::Sok(float z, const char* u, int pv, float odnos, int b)
     : Pice(z, b), procenatVoca(pv), odnosCeneVodaVoc(odnos) {
-    strncpy(ukus, u, sizeof(ukus) - 1);
-    ukus[sizeof(ukus) - 1] = '\0';
+        while (u[i] != '\0' && i < sizeof(ukus) - 1) {
+            ukus[i] = u[i];
+            ++i;
+        }
+        ukus[i] = '\0';
+
 }
 
 float Sok::cena() const {
