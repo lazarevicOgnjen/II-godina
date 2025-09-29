@@ -37,9 +37,14 @@ float Sok::cena() const {
 
 bool Sok::jednako(const Pice& drugo) const {
     if (vrsta() != drugo.vrsta()) return false;
-    return zapremina == drugo.getZapremina() &&
-           strcmp(ukus, drugo.getUkus()) == 0 &&
-           procenatVoca == drugo.getProcenatVoca();
+
+    const char* p = drugo.getUkus();
+    int i = 0;
+    while (ukus[i] != '\0' && p[i] != '\0') {
+        if (ukus[i] != p[i]) return false;
+        ++i;
+    }
+    return ukus[i] == '\0' && p[i] == '\0';   // oba moraju da završe
 }
 
 void Sok::prikazi() const {
