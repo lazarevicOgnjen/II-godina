@@ -2,12 +2,14 @@
 #define SKLADISTE_H
 
 #include "pice.h"
-#include <vector>
 
 class Skladiste {
 private:
-    std::vector<Pice*> niz;
-    int kapacitet;
+    Pice** niz;       // pokazivač na niz pokazivača
+    int broj;         // trenutno pića
+    int kapacitet;    // maksimalno pića
+
+    void prosiri();   // povećava kapacitet
 
 public:
     explicit Skladiste(int k);
