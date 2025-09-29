@@ -1,33 +1,45 @@
 #include "skladiste.h"
-#include <algorithm>
 #include <iostream>
 
-Skladiste::Skladiste(int k) : kapacitet(k) {}
-Skladiste::~Skladiste() { for (Pice* p : niz) delete p; }
+Skladiste::Skladiste(int k)
+    : kapacitet(k), broj(0) {
+    niz = new Pice * [kapacitet];
+}
+
+Skladiste::~Skladiste() {
+    for (int i = 0; i < broj; ++i) delete niz[i];
+    delete[] niz;
+}
+
+void Skladiste::prosiri() {
+    int noviKap = kapacitet * 2;
+    Pice** novi = new Pice * [noviKap];
+    for (int i = 0; i < broj; ++i) novi[i] = niz[i];
+    delete[] niz;
+    niz = novi;
+    kapacitet = noviKap;
+}
 
 void Skladiste::dodaj(Pice* p) {
-    if (niz.size() >= static_cast<size_t>(kapacitet)) {
-        delete p;
-        return;
-    }
-    for (Pice* postojece : niz) {
-        if (postojece->jednako(*p)) {
-            postojece->brojAmbalaza += p->brojAmbalaza;
+    if (broj == kapacitet) prosiri();
+    for (int i = 0; i < broj; ++i)
+        if (niz[i]->jednako(*p)) {
+            niz[i]->brojAmbalaza += p->brojAmbalaza;
             delete p;
             return;
         }
-    }
-    niz.push_back(p);
+    niz[broj++] = p;
 }
 
 void Skladiste::izdvoji(const Pice& primer, int koliko) {
-    for (auto it = niz.begin(); it != niz.end(); ++it) {
-        if ((*it)->jednako(primer)) {
-            if ((*it)->getBrojAmbalaza() <= koliko) {
-                delete *it;
-                it = niz.erase(it);
+    for (int i = 0; i < broj; ++i) {
+        if (niz[i]->jednako(primer)) {
+            if (niz[i]->getBrojAmbalaza() <= koliko) {
+                delete niz[i];
+                for (int j = i; j < broj - 1; ++j) niz[j] = niz[j + 1];
+                --broj;
             } else {
-                (*it)->brojAmbalaza -= koliko;
+                niz[i]->brojAmbalaza -= koliko;
             }
             return;
         }
@@ -35,42 +47,42 @@ void Skladiste::izdvoji(const Pice& primer, int koliko) {
 }
 
 void Skladiste::presipaj(const Voda& iz, const Voda& u) {
-    auto pronadji = [&](const Voda& vz) -> Pice* {
-        for (Pice* p : niz)
-            if (p->jednako(vz)) return p;
-        return nullptr;
-    };
-    Pice* pIz = pronadji(iz);
-    Pice* pU = pronadji(u);
-    if (!pIz || !pU) return;
+    int idxIz = -1, idxU = -1;
+    for (int i = 0; i < broj; ++i) {
+        if (niz[i]->jednako(iz)) idxIz = i;
+        if (niz[i]->jednako(u))  idxU  = i;
+    }
+    if (idxIz == -1 || idxU == -1) return;
 
-    int preliti = std::min(pIz->getBrojAmbalaza(), 5);
-    pIz->brojAmbalaza -= preliti;
-    pU->brojAmbalaza  += preliti;
+    int preliti = niz[idxIz]->getBrojAmbalaza();
+    if (preliti > 5) preliti = 5;                 // primer ograničenja
+    niz[idxIz]->brojAmbalaza -= preliti;
+    niz[idxU ]->brojAmbalaza += preliti;
 
-    if (pIz->brojAmbalaza == 0) {
-        niz.erase(std::remove(niz.begin(), niz.end(), pIz), niz.end());
-        delete pIz;
+    if (niz[idxIz]->getBrojAmbalaza() == 0) {
+        delete niz[idxIz];
+        for (int j = idxIz; j < broj - 1; ++j) niz[j] = niz[j + 1];
+        --broj;
     }
 }
 
 bool Skladiste::dovoljnaKolicina(float litara) const {
     float ukupno = 0;
-    for (const Pice* p : niz)
-        ukupno += p->getZapremina() * p->getBrojAmbalaza();
+    for (int i = 0; i < broj; ++i)
+        ukupno += niz[i]->getZapremina() * niz[i]->getBrojAmbalaza();
     return ukupno >= litara;
 }
 
-void Skladiste::vratiNaj(Pice*& min, Pice*& max) const {
-    if (niz.empty()) { min = max = nullptr; return; }
-    min = max = niz.front();
-    for (const Pice* p : niz) {
-        if (p->cena() < min->cena()) min = const_cast<Pice*>(p);
-        if (p->cena() > max->cena()) max = const_cast<Pice*>(p);
+void Skladiste::vratiNaj(Pice*& najjeftinije, Pice*& najskuplje) const {
+    if (broj == 0) { najjeftinije = najskuplje = nullptr; return; }
+    najjeftinije = najskuplje = niz[0];
+    for (int i = 1; i < broj; ++i) {
+        if (niz[i]->cena() < najjeftinije->cena()) najjeftinije = niz[i];
+        if (niz[i]->cena() > najskuplje ->cena()) najskuplje  = niz[i];
     }
 }
 
 std::ostream& operator<<(std::ostream& os, const Skladiste& s) {
-    for (const Pice* p : s.niz) os << *p << '\n';
+    for (int i = 0; i < s.broj; ++i) os << *s.niz[i] << '\n';
     return os;
 }
