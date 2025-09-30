@@ -68,7 +68,7 @@ begin
       wait for 10 ns;  -- čekanje da se baš signal postavi
 
       write(output_line, A_TB);
-      write(output_line, string'(" -> "));
+      write(output_line, string'(" -> ")');
       write(output_line, F_TB);
       writeline(fout, output_line);
     end loop;
