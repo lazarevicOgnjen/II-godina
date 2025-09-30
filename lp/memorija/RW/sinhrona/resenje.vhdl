@@ -70,7 +70,7 @@ architecture rw_16x8_sync_TB_arch of rw_16x8_sync_TB is
       WE_TB <= 0;
       for i in 0 to 15 loop
         wait until rising_edge(clock_TB);
-        address_TB = std_logic_vector(to_unsigned(i,4));
+        address_TB <= std_logic_vector(to_unsigned(i,4));
         wait until rising_edge(clock_TB);
         report “adress= “ & address_TB’image &
         “ data_out= “ & data_out_TB’image;
@@ -84,12 +84,12 @@ architecture rw_16x8_sync_TB_arch of rw_16x8_sync_TB is
         wait until rising_edge(clock_TB);
         data_in_TB <= std_logic_vector(to_unsigned(i,8));
       end loop;
-
       wait for 80 ns;
+        
       WE_TB <= 0;
       for i in 0 to 15 loop
         wait until rising_edge(clock_TB);
-        address_TB = std_logic_vector(to_unsigned(i,4));
+        address_TB <= std_logic_vector(to_unsigned(i,4));
         wait until rising_edge(clock_TB); 
         report “adress= “ & address_TB’image &
         “ data_out= “ & data_out_TB’image;
