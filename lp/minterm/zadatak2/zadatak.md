@@ -2,6 +2,6 @@
 
 <br><br>
 
-> **za ovaj zadatak se pise tablica**
+> **za ovaj zadatak se pravi tablica**
 
 <img width="413" height="220" alt="t2" src="https://github.com/user-attachments/assets/24622579-9275-4c7e-813d-5e2d76bb4330" />
