@@ -57,6 +57,7 @@ architecture rw_16x8_async_TB_arch of rw_16x8_async_TB is
     begin
       WE_TB <= 0;
       for i in 0 to 15 loop
+        address_TB <= std_logic_vector(to_unsigned(i,4));
         report “adress= “ & address_TB’image &
         “ data_out= “ & data_out_TB’image;
       end loop;
@@ -71,6 +72,7 @@ architecture rw_16x8_async_TB_arch of rw_16x8_async_TB is
         
       WE_TB <= 0;
       for i in 0 to 15 loop
+        address_TB <= std_logic_vector(to_unsigned(i,4));
         report “adress= “ & address_TB’image &
         “ data_out= “ & data_out_TB’image;
       end loop;
