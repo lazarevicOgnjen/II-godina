@@ -40,25 +40,26 @@ architecture rom_16x8_async_TB_arch of rom_16x8_async_TB is
           data_out : out std_logic_vector(7 downto 0));
   end component;
   
-signal address_TB : std_logic_vector(3 downto 0);
-signal data_out_TB : std_logic_vector(7 downto 0);
-
-begin
-  
-  DUT1: rom_16x8_async port map (address => address_TB,
-                                 data_out => data_out_TB);
-    
-  STIMULUS : process
-  signal i : integer;
+  signal address_TB : std_logic_vector(3 downto 0);
+  signal data_out_TB : std_logic_vector(7 downto 0);
 
   begin
-    for i in 0 to 15 loop
-      address_TB = std_logic_vector(to_unsigned(i,4));
-      report “adress= “ & address_TB’image &
-      “ data_out= “ & data_out_TB’image;
-    end loop;
+  
+    DUT1: rom_16x8_async port map (address => address_TB,
+                                 data_out => data_out_TB);
+    
+    STIMULUS : process
+    signal i : integer;
 
-  end process;
+    begin
+      for i in 0 to 15 loop
+        address_TB = std_logic_vector(to_unsigned(i,4));
+        report “adress= “ & address_TB’image &
+        “ data_out= “ & data_out_TB’image;
+      end loop;
+
+    end process;
+
 end architecture;
   
 
