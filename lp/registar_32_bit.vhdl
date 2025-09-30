@@ -15,10 +15,10 @@ architecture reg_arch of reg is
   Reg_proc : process (Clock,Reset)
     begin
     
-      if(Reset = '0') then
+      if (Reset = '0') then
         Data_out <= x"00";
       elsif (Clock'event and Clock = '1') then
-        if(EN = '1') then
+        if (EN = '1') then
           Data_out <= Data_in;
         end if;
       end if;
