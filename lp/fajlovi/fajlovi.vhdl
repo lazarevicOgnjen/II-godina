@@ -46,13 +46,13 @@ architecture encoder_8to3_binary_tb_arch of encoder_8to3_binary_tb is
   file fout: text open write_mode is "izlaz.txt";
 begin
 
-  -- Instanca enkodera
+-- Instanca enkodera
   DUT1: encoder_8to3_binary port map (
     A => A_TB,
     F => F_TB
   );
 
-  -- Proces koji čita ulaz i piše izlaz
+-- Proces koji čita ulaz i piše izlaz
   STIMULUS: process
     variable input_line: line;
     variable output_line: line;
