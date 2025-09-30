@@ -1,5 +1,5 @@
-Library IEEE
-use IEEE.std_logic_1164.all
+Library IEEE;
+use IEEE.std_logic_1164.all;
 
 entity reg is
 port(
