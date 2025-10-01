@@ -13,7 +13,6 @@ INNER JOIN
 INNER JOIN
   Z.ID = IRM.ID_ZAP;
 
-
 SELECT *
 FROM
   STATISTIKA_RADNIH_MESTA
@@ -21,6 +20,8 @@ WHERE
   VREME > 100
 AND
   BROJ_R_MESTA >= 2;
+
+
 
 -- 2. zadatak
 -- ovaj VIEW uzima sva odeljenja koja imaju najmanje 2 zaposlena
@@ -34,7 +35,6 @@ GROUP BY
   Z.ID_ODELJENJE
 HAVING
   COUNT(*) >= 2;
-
 
 UPDATE
   ZAPOSLENI Z
@@ -52,6 +52,7 @@ WHERE EXISTS
     RM.MAX_PLATA < 70000
   AND
     OZ.ID_ODELJENJE = Z.ID_ODELJENJE);
+
 
 
 -- 3. zadatak
