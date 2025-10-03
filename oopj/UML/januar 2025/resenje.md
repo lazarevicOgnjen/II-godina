@@ -1,52 +1,55 @@
 ```mermaid
-
 classDiagram
-
-class Fakultet {
-+int PiB
-+string naziv
-+string adresa
-}
-
-class Katedra{
-+string sef
-+string naziv
-+string spisak projekata
-}
-
-class Nastavnicko_zvanje{
-+docent
-+vanredni profesor
-+redovni profesor
-}
-
-class Clanovi{
-+string saradnici
-+string nastavnici
-+string laboranti
-}
-
-class Predmet{
-+string naziv predmeta
-+int sifra predmeta
-+string skolska godina
-+int redni broj semestra
-}
-
-class Student{
-+string ime
-+string prezime
-+int indeks
-+int godina rodjenja
-+date datum upisa
-+string smer
-}
-
-class Nastavnik{
-+string ime
-+string prezime
-+string titula
-+int broj projekata
-}
-
+    class Fakultet {
+        +PIB: String
+        +Naziv: String
+        +Adresa: String
+    }
+    
+    class Katedra {
+        +Naziv: String
+        +Projekti: List<String>
+    }
+    
+    class Predmet {
+        +Naziv: String
+        +Sifra: String
+        +SkolskaGodina: String
+        +RedniBrojSemestra: Integer
+    }
+    
+    class Student {
+        +Ime: String
+        +Prezime: String
+        +Index: String
+        +GodinaRodjenja: Integer
+        +DatumUpisa: String
+        +Smer: String
+    }
+    
+    class Nastavnik {
+        +Ime: String
+        +Prezime: String
+        +Titula: String
+        +BrojProjekata: Integer
+    }
+    
+    class Saradnik {
+        +Ime: String
+        +Prezime: String
+    }
+    
+    class Laborant {
+        +Ime: String
+        +Prezime: String
+    }
+    
+    Fakultet --> Katedra : Sastoji se od
+    Katedra --|> Nastavnik : Ima šefa
+    Katedra --> Saradnik : Ima
+    Katedra --> Laborant : Ima
+    Katedra --> Predmet : Zadužena za
+    Predmet --> Nastavnik : Predaje
+    Student --> Predmet : Sluša
+    Nastavnik --> Predmet : Angažovan na
 ```
