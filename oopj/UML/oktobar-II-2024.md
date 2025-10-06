@@ -2,72 +2,67 @@
 
 ```mermaid
 classDiagram
-    direction BT
-
     class Dokument {
-        +naziv: string
-        +datumKreiranja: date
-        +grafickiObjekti: GrafickiObjekat[*]
-        +stilovi: Stil[*]
+        - naziv : String
+        - datumKreiranja : Date
+        - datumIzmene : Date
+        + dodajObjekat(objekat: GrafickiObjekat)
+        + dodajStil(stil: Stil)
     }
 
     class GrafickiObjekat {
-        <<abstract>>
-        +id: int
-        +stilLinije: StilLinije[0..1]
+        + crtaj()
     }
 
     class Tacka {
-        +x: int
-        +y: int
+        - x : float
+        - y : float
     }
 
     class Polilinija {
-        +tacke: Tacka[*]
+        - tacke : List~Tacka~
     }
 
     class Pravougaonik {
-        +goreLevo: Tacka
-        +doleDesno: Tacka
-        +stilIspune: StilIspune[0..1]
+        - x : float
+        - y : float
+        - sirina : float
+        - visina : float
     }
 
     class Elipsa {
-        +centar: Tacka
-        +rx: int
-        +ry: int
-        +stilIspune: StilIspune[0..1]
+        - centarX : float
+        - centarY : float
+        - poluosaX : float
+        - poluosaY : float
     }
 
     class Poligon {
-        +tacke: Tacka[*]
-        +stilIspune: StilIspune[0..1]
+        - tacke : List~Tacka~
     }
 
     class Tekst {
-        +pozicija: Tacka
-        +sadrzaj: string
-        +velicinaFonta: int
+        - sadrzaj : String
+        - pozicija : Tacka
     }
 
     class Stil {
-        <<abstract>>
     }
 
     class StilLinije {
-        +tip: enum~LinijaTip~
-        +debljina: int
-        +boja: string
+        - tip : String
+        - debljina : float
+        - boja : String
     }
 
     class StilIspune {
-        +boja: string
-        +srafura: enum~SrafuraTip~
-        +tekstura: string
+        - boja : String
+        - srafura : String
+        - tekstura : String
     }
 
-    Dokument "1" -- "*" GrafickiObjekat : sadrži
-    Dokument "1" -- "*" Stil : poseduje
+    Dokument "1" --> "1..*" GrafickiObjekat
+    Dokument "1" --> "0..*" Stil
 
     GrafickiObjekat <|-- Tacka
     GrafickiObjekat <|-- Polilinija
@@ -79,8 +74,7 @@ classDiagram
     Stil <|-- StilLinije
     Stil <|-- StilIspune
 
-    GrafickiObjekat "*" -- "0..1" StilLinije : koristi
-    Pravougaonik "*" -- "0..1" StilIspune : koristi
-    Elipsa "*" -- "0..1" StilIspune : koristi
-    Poligon "*" -- "0..1" StilIspune : koristi
+    GrafickiObjekat "1" --> "0..1" StilLinije : koristi
+    GrafickiObjekat "1" --> "0..1" StilIspune : koristi
+
 ```
