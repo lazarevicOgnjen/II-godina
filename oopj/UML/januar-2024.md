@@ -3,37 +3,88 @@
 ```mermaid
 
 classDiagram
-    class Program {
-        +process(document: Document): void
+    direction BT
+
+    class Dokument {
+        +naziv: string
+        +datumKreiranja: date
+        +datumSnimanja: date
+        +lokacija: string
+        +autor: Autor
+        +pasusi: Pasus[*]
+        +cloudovi: CloudStorage[*]
     }
-    class Document {
-        -title: string
-        -created_date: Date
-        -last_save_date: Date
-        -location: string
-        -author: string
-        +save_to_external_service(location: string): void
+
+    class Pasus {
+        +recenice: Recenica[1..*]
+        +linkovanaSlika: Slika[0..1]
     }
-    class Paragraph {
-        -text: string
-        -image: Image
+
+    class Recenica {
+        +tokeni: Token[*]
     }
-    class Image {
-        -path: string
-    }
-    class Sentence {
-        -content: string
-    }
+
     class Token {
-        -type: string (char_sequence, number, space, punctuation)
-        -value: string
+        <<abstract>>
+        +sadrzaj: string
+        +stil: Stil
     }
-    Program --> Document: processes
-    Document *-- Paragraph: contains
-    Paragraph *-- Sentence: contains
-    Sentence *-- Token: contains
-    Paragraph --> Image: optional
-    Document --> DropBox: saves to
-    Document --> OneDrive: saves to
+
+    class KarakterNiz {
+    }
+
+    class CeoBroj {
+    }
+
+    class Razmak {
+    }
+
+    class Tacka {
+    }
+
+    class Stil {
+        +font: string
+        +velicina: int
+        +boja: string
+        +bold: bool
+        +italic: bool
+    }
+
+    class Slika {
+        +putanja: string
+    }
+
+    class Autor {
+        +ime: string
+        +prezime: string
+        +email: string
+    }
+
+    class CloudStorage {
+        <<interface>>
+        +sacuvaj(dok: Dokument)
+    }
+
+    class DropBox {
+        +sacuvaj(dok: Dokument)
+    }
+
+    class OneDrive {
+        +sacuvaj(dok: Dokument)
+    }
+
+    Dokument "1" -- "*" Pasus : sadrži
+    Dokument "*" -- "1" Autor : napisao
+    Dokument "*" -- "*" CloudStorage : čuva se u
+    Pasus "1" -- "*" Recenica : ima
+    Pasus "*" -- "0..1" Slika : linkovan
+    Recenica "1" -- "*" Token : sadrži
+    Token <|-- KarakterNiz
+    Token <|-- CeoBroj
+    Token <|-- Razmak
+    Token <|-- Tacka
+    Token "*" -- "1" Stil : opisan
+    CloudStorage <|.. DropBox
+    CloudStorage <|.. OneDrive
 
 ```
