@@ -2,85 +2,60 @@
 
 ```mermaid
 classDiagram
-    direction TB
-
     class Banka {
-        +naziv: string
-        +PIB: string
-        +adresa: string
-        +filijale: Filijala[*]
+        - naziv : String
+        - PIB : String
+        - adresa : String
+        + povuciNovac(racun: Racun, iznos: float)
+        + uplatiNovac(racun: Racun, iznos: float)
+        + transfer(sa: Racun, na: Racun, iznos: float)
+    }
+
+    class Centrala {
     }
 
     class Filijala {
-        +sef: Sef
-        +ekspoziture: Ekspozitura[*]
-        +korisnici: Korisnik[*]
+        - sef : String
+        + zatvoriFilijalu()
     }
 
     class Ekspozitura {
-        +bankomat: Bankomat[0..1]
-        +korisnici: Korisnik[*]
+    }
+
+    class Bankomat {
+        - kolicinaNovca : float
     }
 
     class Korisnik {
-        +ime: string
-        +prezime: string
-        +JMBG: string
-        +racuni: Racun[*]
+        - ime : String
+        - prezime : String
+        - JMBG : String
     }
 
     class Racun {
-        +brojRacuna: string
-        +nerealizovaniCekovi: int
-        +dozvoljeniMinus: decimal
-        +stanje: decimal
-        +tip: TipRacuna
+        - brojRacuna : String
+        - brojNerealizovanihCekova : int
+        - dozvoljeniMinus : float
+        - stanje : float
+        - tip : String
     }
 
     class TekuciRacun {
     }
 
     class DevizniRacun {
-        +valuta: string
-        +trenutniKurs: decimal
+        - valuta : String
+        - kurs : float
     }
 
-    class Bankomat {
-        +novac: decimal
-    }
-
-    class Sef {
-        +ime: string
-        +prezime: string
-    }
-
-    class Transakcija {
-        <<interface>>
-        +izvrsi(racun: Racun, iznos: decimal)
-    }
-
-    class Isplata {
-        +izvrsi(racun: Racun, iznos: decimal)
-    }
-
-    class Uplata {
-        +izvrsi(racun: Racun, iznos: decimal)
-    }
-
-    class Transfer {
-        +izvrsi(sa: Racun, na: Racun, iznos: decimal)
-    }
-
-    Banka "1" -- "*" Filijala : ima
-    Filijala "1" -- "*" Ekspozitura : sadrži
-    Filijala "1" -- "1" Sef : vodi
-    Filijala "1" -- "*" Korisnik : opslužuje
-    Ekspozitura "1" -- "*" Korisnik : opslužuje
-    Ekspozitura "1" -- "0..1" Bankomat : poseduje
-    Korisnik "1" -- "*" Racun : ima
+    Banka "1" --> "1" Centrala
+    Centrala "1" --> "1..*" Filijala
+    Filijala "1" --> "0..*" Ekspozitura
+    Ekspozitura "0..1" --> Bankomat
+    Filijala "1" --> "0..*" Korisnik
+    Ekspozitura "1" --> "0..*" Korisnik
+    Korisnik "1" --> "1..*" Racun
     Racun <|-- TekuciRacun
     Racun <|-- DevizniRacun
-    Transakcija <|.. Isplata
-    Transakcija <|.. Uplata
-    Transakcija <|.. Transfer
+
 ```
