@@ -17,7 +17,7 @@ classDiagram
     class Nastavnik {
         - ime : String
         - prezime : String
-        - titula : {docent, vanredni, redovni}
+        - titula : String
         - brojProjekata : int
     }
 
