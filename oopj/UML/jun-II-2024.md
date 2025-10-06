@@ -2,81 +2,50 @@
 
 ```mermaid
 classDiagram
-    direction TB
-
-    class EvropskoPrvenstvo2024 {
-        <<singleton>>
-        +utakmice: Utakmica[*]
-        +grupe: Grupa[*]
-        +gradovi: Grad[*]
-    }
-
-    class Grad {
-        +naziv: string
-        +drzava: string
+    class EvropskoPrvenstvo {
+        - instance : EvropskoPrvenstvo
+        + getInstance() EvropskoPrvenstvo
     }
 
     class Reprezentacija {
-        +sifra: string
-        +nazivDrzave: string
-        +bojaDresa: string
-        +igraci: Fudbaler[*]
-        +grupa: Grupa
+        - naziv : String
+        - sifraDrzave : String
+        - bojaDresa : String
     }
 
     class Fudbaler {
-        <<abstract>>
-        +brojDresa: int
-        +ime: string
-        +prezime: string
-        +godiste: int
+        - brojDresa : int
+        - ime : String
+        - prezime : String
+        - godiste : int
     }
 
     class AktivniIgrac {
-        +brojGolova: int
+        - brojPogodaka : int
     }
 
     class Golman {
-        +brojOdbrana: int
+        - brojOdbranjenihUdaraca : int
     }
 
     class Grupa {
-        +oznaka: string
-        +reprezentacije: Reprezentacija[4]
+        - oznakaGrupe : String
     }
 
     class Utakmica {
-        +domacin: Reprezentacija
-        +gost: Reprezentacija
-        +grad: Grad
-        +faza: FazaTakmicenja
-        +golovaDomacin: int
-        +golovaGost: int
+        - faza : String
+        - poeniDomacin : int
+        - poeniGost : int
+        - grad : String
     }
 
-    class FazaTakmicenja {
-        <<enumeration>>
-        kvalifikacijeGrupa
-        baraz
-        cetvrtfinale
-        polufinale
-        finale
-    }
-
-    %% =========  RELATIONS  =========
-    EvropskoPrvenstvo2024 "1" -- "*" Grupa : sadrži
-    EvropskoPrvenstvo2024 "1" -- "*" Utakmica : organizuje
-    EvropskoPrvenstvo2024 "1" -- "*" Grad : domaćini
-
-    Grupa "1" -- "4" Reprezentacija : učestvuje
-
-    Reprezentacija "1" -- "*" Fudbaler : ima
-
+    EvropskoPrvenstvo "1" --> "1..*" Grupa
+    Grupa "1" --> "1..*" Reprezentacija
+    Reprezentacija "1" --> "1..*" Fudbaler
     Fudbaler <|-- AktivniIgrac
     Fudbaler <|-- Golman
+    EvropskoPrvenstvo "1" --> "1..*" Utakmica
+    Utakmica "1" --> "1" Reprezentacija : domacin
+    Utakmica "1" --> "1" Reprezentacija : gost
 
-    Utakmica "1" -- "1" Reprezentacija : domaćin
-    Utakmica "1" -- "1" Reprezentacija : gost
-    Utakmica "1" -- "1" Grad : igra se u
-    Utakmica "*" -- "1" FazaTakmicenja : faza
 ```
