@@ -3,56 +3,83 @@
 
 ```mermaid
 classDiagram
+    direction LR
+
     class Fakultet {
-        +PIB: String
-        +Naziv: String
-        +Adresa: String
+        +PIB: string
+        +naziv: string
+        +adresa: string
+        +katedre: Katedra[*]
     }
-    
+
     class Katedra {
-        +Naziv: String
-        +Projekti: List<String>
+        +naziv: string
+        +projekti: Projekat[*]
+        +sef: Nastavnik
+        +clanovi: Zaposleni[*]
+        +predmeti: Predmet[*]
     }
-    
-    class Predmet {
-        +Naziv: String
-        +Sifra: String
-        +SkolskaGodina: String
-        +RedniBrojSemestra: Integer
+
+    class Zaposleni {
+        <<abstract>>
+        +ime: string
+        +prezime: string
     }
-    
-    class Student {
-        +Ime: String
-        +Prezime: String
-        +Index: String
-        +GodinaRodjenja: Integer
-        +DatumUpisa: String
-        +Smer: String
-    }
-    
-    class Nastavnik {
-        +Ime: String
-        +Prezime: String
-        +Titula: String
-        +BrojProjekata: Integer
-    }
-    
+
     class Saradnik {
-        +Ime: String
-        +Prezime: String
+        +administrira: Predmet[*]
     }
-    
+
+    class Nastavnik {
+        +titula: string
+        +brojProjekata: int
+        +predaje: Predmet[*]
+    }
+
     class Laborant {
-        +Ime: String
-        +Prezime: String
     }
-    
-    Fakultet --> Katedra : Sastoji se od
-    Katedra --|> Nastavnik : Ima šefa
-    Katedra --> Saradnik : Ima
-    Katedra --> Laborant : Ima
-    Katedra --> Predmet : Zadužena za
-    Predmet --> Nastavnik : Predaje
-    Student --> Predmet : Sluša
-    Nastavnik --> Predmet : Angažovan na
+
+    class Predmet {
+        +naziv: string
+        +sifra: string
+        +skolskaGodina: string
+        +semestar: int
+        +delovi: DeoPredmeta[*]
+    }
+
+    class DeoPredmeta {
+        +oznaka: string
+        +nastavnik: Nastavnik
+    }
+
+    class Projekat {
+        +naziv: string
+        +evidencioniBroj: string
+        +datumPocetka: date
+        +datumKraja: date
+    }
+
+    class Student {
+        +ime: string
+        +prezime: string
+        +indeks: string
+        +godinaRodjenja: int
+        +datumUpisa: date
+        +smer: string
+        +slusa: Predmet[*]
+    }
+
+    Fakultet "1" -- "*" Katedra : ima
+    Katedra "1" -- "*" Zaposleni : članovi
+    Katedra "1" -- "*" Predmet : zadužena
+    Katedra "1" -- "0..1" Nastavnik : šef
+    Zaposleni <|-- Saradnik
+    Zaposleni <|-- Nastavnik
+    Zaposleni <|-- Laborant
+    Nastavnik "1" -- "*" Predmet : predaje
+    Predmet "1" -- "*" DeoPredmeta : sadrži
+    DeoPredmeta "*" -- "1" Nastavnik : drži
+    Saradnik "1" -- "*" Predmet : administrira
+    Student "*" -- "*" Predmet : sluša
+    Katedra "1" -- "*" Projekat : realizuje
 ```
