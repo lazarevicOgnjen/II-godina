@@ -5,8 +5,4 @@
 > - termini: 6
 > - vreme: 9 sati
 
-<br>
-
-> **Tipovi podataka:**
->- vrednosni
->- referentni
+<br><br>
