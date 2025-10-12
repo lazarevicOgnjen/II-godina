@@ -34,8 +34,10 @@ void KaficSaPlazom::Oslobodi(int rbr) {
     }
 }
 
-int KaficSaPlazom::UkupnoLezaljki() const {
-    return brojTrenutnih;
+void KaficSaPlazom::UkupnoLezaljki() const {
+  for(int i =0;i<iznajmljeneLezaljke; i++){
+    lezaljke[i]->Prikazi();
+  }
 }
 
 double KaficSaPlazom::UkupnaSvotaNovca() const {
