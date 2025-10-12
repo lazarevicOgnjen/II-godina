@@ -1,4 +1,6 @@
 #include "KaficSaPlazom.h"
+#include <iostream>
+using namespace std;
 
 KaficSaPlazom::KaficSaPlazom(int kap)
     : kapacitet(kap), brojTrenutnih(0), naplaceno(0) {
