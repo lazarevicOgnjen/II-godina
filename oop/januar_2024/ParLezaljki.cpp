@@ -1,27 +1,25 @@
-#ifndef PARLEZALJKI_H
-#define PARLEZALJKI_H
+#include "ParLezaljki.h"
 
-#include <iostream>
-using namespace std;
+ParLezaljki::ParLezaljki(int r, int rd, double cl, double cn)
+    : rbr(r), red(rd), cenaLezaljki(cl), cenaNapicima(cn) {}
 
-class ParLezaljki {
-protected:
-    int rbr;
-    int red;
-    double cenaLezaljki;
-    double cenaNapicima;
+ParLezaljki::~ParLezaljki() {}
 
-public:
-    ParLezaljki(int rbr = 0, int red = 0, double cenaLezaljki = 0, double cenaNapicima = 0);
-    virtual ~ParLezaljki();
+double ParLezaljki::UkupnoZaNaplatu() const {
+    double popust = (40 - 2 * red) / 100.0;
+    return cenaLezaljki + cenaNapicima * (1 - popust);
+}
 
-    int GetRbr() const { return rbr; }
-    int GetRed() const { return red; }
+void ParLezaljki::Prikazi() const {
+    cout << "Par lezaljki [rbr=" << rbr
+         << ", red=" << red
+         << ", cena lezaljki=" << cenaLezaljki
+         << ", napici=" << cenaNapicima
+         << ", ukupno=" << UkupnoZaNaplatu() << "]" << endl;
+}
 
-    virtual double UkupnoZaNaplatu() const;
-    virtual void Prikazi() const;
-
-    friend ostream& operator<<(ostream& os, const ParLezaljki& p);
-};
-
-#endif
+ostream& operator<<(ostream& os, const ParLezaljki& p) {
+    os << "ParLezaljki(" << p.rbr << ", " << p.red << ", "
+       << p.cenaLezaljki << ", " << p.cenaNapicima << ")";
+    return os;
+}
