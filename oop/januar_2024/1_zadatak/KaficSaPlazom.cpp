@@ -52,31 +52,17 @@ bool KaficSaPlazom::PostojiGdeTrebaPlatiti(double svota) const {
     return false;
 }
 
-void KaficSaPlazom::VratiNajskuplje(ParLezaljki** maxCena, ParLezaljki** maxNapici) const {
-    double maxUkupno = -1;
-    double maxNapicima = -1;
-    *maxCena = nullptr;
-    *maxNapici = nullptr;
-
-    for (int i = 0; i < brojTrenutnih; i++) {
-        double ukupno = niz[i]->UkupnoZaNaplatu();
-        if (ukupno > maxUkupno) {
-            maxUkupno = ukupno;
-            *maxCena = niz[i];
-        }
-
-        // Napitke procenjujemo kao razлику: ukupno - cenaLezaljki (за основни тип)
-        double napici = 0;
-        const ParLezaljki* pl = niz[i];
-        if (pl) {
-            // Приближно израчунавање укупне цене пића без приватних атрибута
-            napici = ukupno - (pl->UkupnoZaNaplatu() - 0);
-        }
-        if (napici > maxNapicima) {
-            maxNapicima = napici;
-            *maxNapici = niz[i];
-        }
+void KaficSaPlazom::VratiNajskuplje(ParLezaljki **pLezMaxCena, ParLezaljki **pLezMaxNapitak) const{
+  *plezMaxCena = lezaljke[0];
+  *plezMaxNapitak = lezaljke[0];
+  for(int i=1; i<iznajmljeneLezaljke; i++){
+    if(lezaljke[i]->Naplata() > (*plezMaxCena)->Naplata()){
+      *plezMaxCena = lezaljke[i];
     }
+    if(lezaljke[i]->GetCenaPica() > (*plezMaxNapitak)->GetCenaPica()){
+      *plezMaxNapitak = lezaljke[i];
+    }
+  }
 }
 
 ostream& operator<<(ostream& os, const KaficSaPlazom& k) {
