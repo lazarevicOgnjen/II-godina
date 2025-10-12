@@ -3,6 +3,9 @@
 
 #include "ParLezaljki.h"
 
+#include <iostream>
+using namespace std;
+
 class ParLezaljkiSaDodatkom : public ParLezaljki {
     int brojDodatnih;
 
