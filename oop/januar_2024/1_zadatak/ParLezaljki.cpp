@@ -1,4 +1,5 @@
 #include "ParLezaljki.h"
+using namespace std;
 
 ParLezaljki::ParLezaljki(int r, int rd, double cl, double cn)
     : rbr(r), red(rd), cenaLezaljki(cl), cenaNapicima(cn) {}
