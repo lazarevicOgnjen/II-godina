@@ -18,8 +18,8 @@ public:
 
     void Dodaj(ParLezaljki* p);
     void Oslobodi(int rbr);
-    int UkupnoLezaljki() const;
-    double UkupnaSvotaNovca() const;
+    void UkupnoLezaljki() const;
+    void UkupnaSvotaNovca() const;
     bool PostojiGdeTrebaPlatiti(double svota) const;
     void VratiNajskuplje(ParLezaljki** maxCena, ParLezaljki** maxNapici) const;
 
