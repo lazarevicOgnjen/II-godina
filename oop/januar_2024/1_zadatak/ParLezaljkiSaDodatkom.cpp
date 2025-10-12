@@ -1,4 +1,6 @@
 #include "ParLezaljkiSaDodatkom.h"
+#include <iostream>
+using namespace std;
 
 ParLezaljkiSaDodatkom::ParLezaljkiSaDodatkom(int r, int rd, double cl, double cn, int bd)
     : ParLezaljki(r, rd, cl, cn), brojDodatnih(bd) {}
