@@ -3,6 +3,9 @@
 
 #include "ParLezaljkiSaDodatkom.h"
 
+#include <iostream>
+using namespace std;
+
 class KaficSaPlazom {
     ParLezaljki** niz;
     int kapacitet;
