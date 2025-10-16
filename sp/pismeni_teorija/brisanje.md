@@ -18,11 +18,11 @@ Funkcija Brisi(LL, E)
 17. 
 18. // Ako nije pronađen element
 19. if (pomocni = NULL) then
-20    return LL
-
-// Brisanje pronađenog čvora
-link(prethodni) ← link(pomocni)
-freenode(pomocni)
-
-return LL
+20.    return LL
+21.
+22. // Brisanje pronađenog čvora
+23. link(prethodni) ← link(pomocni)
+24. freenode(pomocni)
+25. 
+26. return LL
 End Function
