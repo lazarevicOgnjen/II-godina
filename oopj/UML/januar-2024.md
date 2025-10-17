@@ -3,35 +3,35 @@
 ```mermaid
 classDiagram
     class Dokument {
-        -String naziv
-        -Date datumKreiranja
-        -Date datumPoslednjegSnimanja
-        -Lokacija lokacija
-        -Autor autor
-        +sacuvajUDropBox()
-        +sacuvajUOneDrive()
+        -naziv : String
+        -datumKreiranja : Date
+        -datumPoslednjegSnimanja : Date
+        -lokacija : Lokacija
+        -autor : Autor
+        +sacuvajUDropBox() : void
+        +sacuvajUOneDrive() : void
     }
 
     class Pasus {
-        -Slika linkovanaSlika
+        -linkovanaSlika : Slika
     }
 
     class Recenica {
-        -List~Token~ tokeni
+        -tokeni : List~Token~
     }
 
     class Token {
-        -String vrednost
-        -TokenTip tip
-        -Stil stil
+        -vrednost : String
+        -tip : TokenTip
+        -stil : Stil
     }
 
     class Stil {
-        -String font
-        -int velicinaFonta
-        -boolean jePodebljan
-        -boolean jeKurziv
-        -String boja
+        -font : String
+        -velicinaFonta : int
+        -jePodebljan : boolean
+        -jeKurziv : boolean
+        -boja : String
     }
 
     class TokenTip {
@@ -43,38 +43,43 @@ classDiagram
     }
 
     class Slika {
-        -String putanja
-        -String naziv
-        -int visina
-        -int sirina
+        -putanja : String
+        -naziv : String
+        -visina : int
+        -sirina : int
     }
 
     class Lokacija {
-        -String putanja
+        -putanja : String
     }
 
     class Autor {
-        -String ime
-        -String prezime
-        -String email
+        -ime : String
+        -prezime : String
+        -email : String
     }
 
     class DropBoxService {
-        +sacuvajDokument(Document doc)
+        +sacuvajDokument(doc : Dokument) : boolean
     }
 
     class OneDriveService {
-        +sacuvajDokument(Document doc)
+        +sacuvajDokument(doc : Dokument) : boolean
     }
 
-    Dokument "1" *-- "1..*" Pasus
-    Pasus "1" *-- "1..*" Recenica
-    Recenica "1" *-- "1..*" Token
-    Token "1" --> "1" Stil
-    Token "1" --> "1" TokenTip
-    Pasus "1" --> "0..1" Slika
-    Dokument "1" --> "1" Lokacija
-    Dokument "1" --> "1" Autor
-    Dokument ..> DropBoxService
-    Dokument ..> OneDriveService
+    %% KOMPOZICIJA - jaki odnosi
+    Dokument "1" *-- "1..*" Pasus : sadrži
+    Pasus "1" *-- "1..*" Recenica : sadrži
+    Recenica "1" *-- "1..*" Token : sadrži
+
+    %% ASOCIJACIJE - obični odnosi
+    Token "1" --> "1" Stil : ima
+    Token "1" --> "1" TokenTip : ima
+    Pasus "1" --> "0..1" Slika : linkovan sa
+    Dokument "1" --> "1" Lokacija : ima
+    Dokument "1" --> "1" Autor : ima
+
+    %% ZAVISNOSTI - koristi servise
+    Dokument ..> DropBoxService : koristi
+    Dokument ..> OneDriveService : koristi
 ```
