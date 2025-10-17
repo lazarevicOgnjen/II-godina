@@ -3,82 +3,82 @@
 ```mermaid
 classDiagram
     class Fakultet {
-        -String PIB
-        -String naziv
-        -String adresa
-        +List~Katedra~ katedre
+        PIB : String
+        naziv : String
+        adresa : String
+        katedre : List~Katedra~
     }
 
     class Katedra {
-        -String naziv
-        -List~String~ spisakProjekata
-        +Nastavnik šef
-        +List~Saradnik~ saradnici
-        +List~Nastavnik~ nastavnici
-        +List~Laborant~ laboranti
-        +List~Predmet~ predmeti
+        naziv : String
+        spisakProjekata : List~String~
+        šef : Nastavnik
+        saradnici : List~Saradnik~
+        nastavnici : List~Nastavnik~
+        laboranti : List~Laborant~
+        predmeti : List~Predmet~
     }
 
     class Osoba {
         <<abstract>>
-        -String ime
-        -String prezime
+        ime : String
+        prezime : String
     }
 
     class Student {
-        -String indeks
-        -int godinaRodjenja
-        -Date datumUpisa
-        -String smer
-        +List~Predmet~ predmeti
+        indeks : String
+        godinaRodjenja : int
+        datumUpisa : Date
+        smer : String
+        predmeti : List~Predmet~
     }
 
     class Nastavnik {
-        -String titula
-        -int brojProjekata
-        +List~Predmet~ predmeti
-        +List~DeoPredmeta~ deloviPredmeta
+        titula : String
+        brojProjekata : int
+        predmeti : List~Predmet~
+        deloviPredmeta : List~DeoPredmeta~
     }
 
     class Saradnik {
-        +List~Administracija~ administracije
+        administracije : List~Administracija~
     }
 
     class Laborant {
     }
 
     class Predmet {
-        -String naziv
-        -String sifra
-        -String skolskaGodina
-        -int semestar
-        +List~DeoPredmeta~ delovi
-        +List~Student~ studenti
+        naziv : String
+        sifra : String
+        skolskaGodina : String
+        semestar : int
+        delovi : List~DeoPredmeta~
+        studenti : List~Student~
     }
 
     class DeoPredmeta {
-        -String naziv
-        +Nastavnik nastavnik
+        naziv : String
+        nastavnik : Nastavnik
     }
 
     class Administracija {
-        -String opis
-        +Saradnik saradnik
-        +Predmet predmet
+        opis : String
+        saradnik : Saradnik
+        predmet : Predmet
     }
 
-    Fakultet "1" *-- "1..*" Katedra : sadrži
+    Fakultet "1" *-- "1..*" Katedra
     Katedra "1" -- "1" Nastavnik : šef
-    Katedra "1" *-- "1..*" Saradnik : članovi
-    Katedra "1" *-- "1..*" Nastavnik : članovi
-    Katedra "1" *-- "1..*" Laborant : članovi
-    Katedra "1" *-- "1..*" Predmet : zadužena za
-    Nastavnik "1..*" -- "1..*" Predmet : predaje
-    Predmet "1" *-- "1..*" DeoPredmeta : sadrži
-    DeoPredmeta "1" -- "1" Nastavnik : drži
-    Saradnik "1" *-- "1..*" Administracija : radi
-    Administracija "1" -- "1" Predmet : vezana za
-    Student "1..*" -- "1..*" Predmet : sluša
+    Katedra "1" *-- "1..*" Saradnik
+    Katedra "1" *-- "1..*" Nastavnik
+    Katedra "1" *-- "1..*" Laborant
+    Katedra "1" *-- "1..*" Predmet
+    Nastavnik "1..*" -- "1..*" Predmet
+    Predmet "1" *-- "1..*" DeoPredmeta
+    DeoPredmeta "1" -- "1" Nastavnik
+    Saradnik "1" *-- "1..*" Administracija
+    Administracija "1" -- "1" Predmet
+    Student "1..*" -- "1..*" Predmet
 
     Osoba <|-- Student
     Osoba <|-- Nastavnik
