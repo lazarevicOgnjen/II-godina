@@ -67,18 +67,18 @@ classDiagram
         +Predmet predmet
     }
 
-    Fakultet "1" *-- "many" Katedra : sadrži
+    Fakultet "1" *-- "1..*" Katedra : sadrži
     Katedra "1" -- "1" Nastavnik : šef
-    Katedra "1" *-- "many" Saradnik : članovi
-    Katedra "1" *-- "many" Nastavnik : članovi
-    Katedra "1" *-- "many" Laborant : članovi
-    Katedra "1" *-- "many" Predmet : zadužena za
-    Nastavnik "many" -- "many" Predmet : predaje
-    Predmet "1" *-- "many" DeoPredmeta : sadrži
+    Katedra "1" *-- "1..*" Saradnik : članovi
+    Katedra "1" *-- "1..*" Nastavnik : članovi
+    Katedra "1" *-- "1..*" Laborant : članovi
+    Katedra "1" *-- "1..*" Predmet : zadužena za
+    Nastavnik "1..*" -- "1..*" Predmet : predaje
+    Predmet "1" *-- "1..*" DeoPredmeta : sadrži
     DeoPredmeta "1" -- "1" Nastavnik : drži
-    Saradnik "1" *-- "many" Administracija : radi
+    Saradnik "1" *-- "1..*" Administracija : radi
     Administracija "1" -- "1" Predmet : vezana za
-    Student "many" -- "many" Predmet : sluša
+    Student "1..*" -- "1..*" Predmet : sluša
 
     Osoba <|-- Student
     Osoba <|-- Nastavnik
