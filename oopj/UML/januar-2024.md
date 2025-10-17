@@ -3,51 +3,78 @@
 ```mermaid
 classDiagram
     class Dokument {
-        - naziv : String
-        - datumKreiranja : Date
-        - datumPoslednjegSnimanja : Date
-        - lokacija : String
-        - autor : String
-        + sacuvajUDropBox()
-        + sacuvajUOneDrive()
+        -String naziv
+        -Date datumKreiranja
+        -Date datumPoslednjegSnimanja
+        -Lokacija lokacija
+        -Autor autor
+        +sacuvajUDropBox()
+        +sacuvajUOneDrive()
     }
 
     class Pasus {
-        - slika : Slika
+        -Slika linkovanaSlika
     }
 
     class Recenica {
+        -List~Token~ tokeni
     }
 
     class Token {
-        - stil : String
+        -String vrednost
+        -TokenTip tip
+        -Stil stil
     }
 
-    class NizKaraktera {
-        - sadrzaj : String
+    class Stil {
+        -String font
+        -int velicinaFonta
+        -boolean jePodebljan
+        -boolean jeKurziv
+        -String boja
     }
 
-    class CeoBroj {
-        - vrednost : int
-    }
-
-    class Razmak {
-    }
-
-    class Tacka {
+    class TokenTip {
+        <<enumeration>>
+        TEKST
+        CEO_BROJ
+        RAZMAK
+        TACKA
     }
 
     class Slika {
-        - putanja : String
+        -String putanja
+        -String naziv
+        -int visina
+        -int sirina
     }
 
-    Dokument "1" --> "1..*" Pasus
-    Pasus "1" --> "1..*" Recenica
-    Recenica "1" --> "1..*" Token
-    Pasus --> Slika : "moze biti linkovan"
-    Token <|-- NizKaraktera
-    Token <|-- CeoBroj
-    Token <|-- Razmak
-    Token <|-- Tacka
+    class Lokacija {
+        -String putanja
+    }
 
+    class Autor {
+        -String ime
+        -String prezime
+        -String email
+    }
+
+    class DropBoxService {
+        +sacuvajDokument(Document doc)
+    }
+
+    class OneDriveService {
+        +sacuvajDokument(Document doc)
+    }
+
+    Dokument "1" *-- "1..*" Pasus
+    Pasus "1" *-- "1..*" Recenica
+    Recenica "1" *-- "1..*" Token
+    Token "1" --> "1" Stil
+    Token "1" --> "1" TokenTip
+    Pasus "1" --> "0..1" Slika
+    Dokument "1" --> "1" Lokacija
+    Dokument "1" --> "1" Autor
+    Dokument ..> DropBoxService
+    Dokument ..> OneDriveService
 ```
