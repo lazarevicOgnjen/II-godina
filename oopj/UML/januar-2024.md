@@ -6,7 +6,7 @@ classDiagram
         -naziv : String
         -datumKreiranja : Date
         -datumPoslednjegSnimanja : Date
-        -lokacija : Lokacija
+        -lokacija : String
         -autor : Autor
         +sacuvajUDropBox() : void
         +sacuvajUOneDrive() : void
@@ -49,10 +49,6 @@ classDiagram
         -sirina : int
     }
 
-    class Lokacija {
-        -putanja : String
-    }
-
     class Autor {
         -ime : String
         -prezime : String
@@ -76,7 +72,6 @@ classDiagram
     Token "1" --> "1" Stil : ima
     Token "1" --> "1" TokenTip : ima
     Pasus "1" --> "0..1" Slika : linkovan sa
-    Dokument "1" --> "1" Lokacija : ima
     Dokument "1" --> "1" Autor : ima
 
     %% ZAVISNOSTI - koristi servise
