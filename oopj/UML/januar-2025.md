@@ -26,6 +26,8 @@ classDiagram
     }
 
     class Student {
+        ime : String
+        prezime : String
         indeks : String
         godinaRodjenja : int
         datumUpisa : Date
