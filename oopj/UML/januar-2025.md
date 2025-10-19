@@ -36,6 +36,8 @@ classDiagram
     }
 
     class Nastavnik {
+        ime : String
+        prezime : String
         titula : String
         brojProjekata : int
         predmeti : List~Predmet~
