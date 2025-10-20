@@ -2,121 +2,90 @@
 
 ```mermaid
 classDiagram
-    class Document {
-        -List~GraphicalObject~ graphicalObjects
-        -List~Style~ styles
+    class Dokument {
+        -String naziv
+        -List~GrafickiObjekat~ listaGrafickihObjekata
+        -List~Stil~ listaStilova
     }
 
-    class GraphicalObject {
+    class GrafickiObjekat {
         -String id
-        -String name
-        -LineStyle lineStyle
-        -FillStyle fillStyle
-        +draw()
-        +move()
-        +resize()
+        -StilLinije stilLinije
+        -StilIspune stilIspune
+        +crtaj() void
+        +pomeri(double x, double y) void
+        +rotira(double ugao) void
     }
 
-    class Point {
-        -double x
-        -double y
-    }
-
-    class Polyline {
-        -List~Point~ points
-    }
-
-    class Rectangle {
-        -double x
-        -double y
-        -double width
-        -double height
-    }
-
-    class Ellipse {
-        -double centerX
-        -double centerY
-        -double radiusX
-        -double radiusY
-    }
-
-    class Polygon {
-        -List~Point~ vertices
-    }
-
-    class Text {
-        -String content
-        -String font
-        -double fontSize
-        -double x
-        -double y
-    }
-
-    class Style {
+    class Stil {
         <<abstract>>
+        -String naziv
         -String id
-        -String name
     }
 
-    class LineStyle {
-        -LineType lineType
-        -double thickness
-        -Color color
+    class StilLinije {
+        -String tipLinije
+        -double debljina
+        -String boja
     }
 
-    class FillStyle {
-        -Color color
-        -FillPattern pattern
-        -String texture
+    class StilIspune {
+        -String boja
+        -String srafura
+        -String tekstura
     }
 
-    class LineType {
-        <<enumeration>>
-        SOLID
-        DASHED
-        DOTTED
-        DASH_DOT
+    class Tacka {
+        -double x
+        -double y
     }
 
-    class FillPattern {
-        <<enumeration>>
-        NONE
-        SOLID
-        HATCH
-        CROSS_HATCH
-        DIAGONAL_HATCH
+    class Polilinija {
+        -List~Tacka~ listeTacaka
     }
 
-    class Color {
-        -int red
-        -int green
-        -int blue
-        -int alpha
+    class Pravougaonik {
+        -double x
+        -double y
+        -double sirina
+        -double visina
     }
 
-    %% Inheritance relationships
-    GraphicalObject <|-- Point
-    GraphicalObject <|-- Polyline
-    GraphicalObject <|-- Rectangle
-    GraphicalObject <|-- Ellipse
-    GraphicalObject <|-- Polygon
-    GraphicalObject <|-- Text
+    class Elipsa {
+        -double centarX
+        -double centarY
+        -double radijusX
+        -double radijusY
+    }
 
-    Style <|-- LineStyle
-    Style <|-- FillStyle
+    class Poligon {
+        -List~Tacka~ teme
+    }
 
-    %% Composition relationships
-    Document *-- GraphicalObject
-    Document *-- Style
+    class Tekst {
+        -String sadrzaj
+        -String font
+        -int velicinaFonta
+        -Tacka pozicija
+    }
+
+    Dokument "1" *-- "many" GrafickiObjekat : sadrži
+    Dokument "1" *-- "many" Stil : sadrži
     
-    GraphicalObject *-- LineStyle
-    GraphicalObject *-- FillStyle
+    GrafickiObjekat <|-- Tacka
+    GrafickiObjekat <|-- Polilinija
+    GrafickiObjekat <|-- Pravougaonik
+    GrafickiObjekat <|-- Elipsa
+    GrafickiObjekat <|-- Poligon
+    GrafickiObjekat <|-- Tekst
     
-    Polyline *-- Point
-    Polygon *-- Point
+    Stil <|-- StilLinije
+    Stil <|-- StilIspune
     
-    LineStyle --> LineType
-    LineStyle --> Color
-    FillStyle --> Color
-    FillStyle --> FillPattern
+    GrafickiObjekat --> "0..1" StilLinije : koristi
+    GrafickiObjekat --> "0..1" StilIspune : koristi
+    
+    Polilinija "1" *-- "many" Tacka : sastoji se od
+    Poligon "1" *-- "many" Tacka : sastoji se od
+    Tekst "1" *-- "1" Tacka : ima poziciju
 ```
