@@ -9,6 +9,7 @@ classDiagram
     }
 
     class GrafickiObjekat {
+        <<abstract>>
         -String id
         -StilLinije stilLinije
         -StilIspune stilIspune
@@ -41,7 +42,7 @@ classDiagram
     }
 
     class Polilinija {
-        -List~Tacka~ listeTacaka
+        -List~GrafickiObjekat~ segmenti
     }
 
     class Pravougaonik {
@@ -59,14 +60,14 @@ classDiagram
     }
 
     class Poligon {
-        -List~Tacka~ teme
+        -List~GrafickiObjekat~ temena
     }
 
     class Tekst {
         -String sadrzaj
         -String font
         -int velicinaFonta
-        -Tacka pozicija
+        -GrafickiObjekat pozicija
     }
 
     Dokument "1" *-- "many" GrafickiObjekat : sadrži
@@ -85,7 +86,7 @@ classDiagram
     GrafickiObjekat --> "0..1" StilLinije : koristi
     GrafickiObjekat --> "0..1" StilIspune : koristi
     
-    Polilinija "1" *-- "many" Tacka : sastoji se od
-    Poligon "1" *-- "many" Tacka : sastoji se od
-    Tekst "1" *-- "1" Tacka : ima poziciju
+    Polilinija "1" *-- "many" GrafickiObjekat : sastoji se od
+    Poligon "1" *-- "many" GrafickiObjekat : sastoji se od
+    Tekst "1" *-- "1" GrafickiObjekat : ima poziciju
 ```
