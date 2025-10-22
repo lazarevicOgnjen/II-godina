@@ -2,7 +2,6 @@
 #define ISPIT_PRIREMA_H
 
 #include "IspitniMaterijal.h"
-#include <stdexcept>
 
 class IspitPriprema {
 private:
