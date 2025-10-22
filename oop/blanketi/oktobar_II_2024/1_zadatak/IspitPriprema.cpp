@@ -1,4 +1,5 @@
 #include "IspitPriprema.h"
+#include <iostream>
 
 IspitPriprema::IspitPriprema(int max) : _max(max), _trenutno(0) {
     _materijali = new IspitniMaterijal*[_max];
@@ -13,7 +14,6 @@ IspitPriprema::IspitPriprema(const IspitPriprema& other) {
     _materijali = new IspitniMaterijal*[_max];
     
     for (int i = 0; i < _trenutno; i++) {
-        // Deep copy - moramo kopirati objekte, ne samo pokazivače
         const Lekcija* lekcija = dynamic_cast<const Lekcija*>(other._materijali[i]);
         const Zadatak* zadatak = dynamic_cast<const Zadatak*>(other._materijali[i]);
         
@@ -31,13 +31,11 @@ IspitPriprema::IspitPriprema(const IspitPriprema& other) {
 
 IspitPriprema& IspitPriprema::operator=(const IspitPriprema& other) {
     if (this != &other) {
-        // Brišemo staro
         for (int i = 0; i < _trenutno; i++) {
             delete _materijali[i];
         }
         delete[] _materijali;
         
-        // Kopiramo novo
         _max = other._max;
         _trenutno = other._trenutno;
         _materijali = new IspitniMaterijal*[_max];
@@ -69,7 +67,9 @@ IspitPriprema::~IspitPriprema() {
 
 void IspitPriprema::Dodaj(IspitniMaterijal* materijal) {
     if (_trenutno >= _max) {
-        throw std::runtime_error("Kolekcija je puna");
+        // Umesto std::runtime_error, koristimo cout i izlazak iz funkcije
+        std::cout << "Greska: Kolekcija je puna" << std::endl;
+        return;
     }
     _materijali[_trenutno++] = materijal;
 }
@@ -78,12 +78,12 @@ void IspitPriprema::Obrisi(int oznaka) {
     for (int i = 0; i < _trenutno; i++) {
         if (_materijali[i]->getOznaka() == oznaka) {
             if (_materijali[i]->getSavladao()) {
-                throw std::runtime_error("Ne može se obrisati savladan materijal");
+                std::cout << "Greska: Ne moze se obrisati savladan materijal" << std::endl;
+                return;
             }
             
             delete _materijali[i];
             
-            // Pomeramo ostale elemente
             for (int j = i; j < _trenutno - 1; j++) {
                 _materijali[j] = _materijali[j + 1];
             }
@@ -91,7 +91,7 @@ void IspitPriprema::Obrisi(int oznaka) {
             return;
         }
     }
-    throw std::runtime_error("Materijal sa datom oznakom nije pronadjen");
+    std::cout << "Greska: Materijal sa oznakom " << oznaka << " nije pronadjen" << std::endl;
 }
 
 void IspitPriprema::Savladaj(int oznaka) {
@@ -101,7 +101,7 @@ void IspitPriprema::Savladaj(int oznaka) {
             return;
         }
     }
-    throw std::runtime_error("Materijal sa datom oznakom nije pronadjen");
+    std::cout << "Greska: Materijal sa oznakom " << oznaka << " nije pronadjen" << std::endl;
 }
 
 int IspitPriprema::UkupnoSavladanih() const {
@@ -124,7 +124,8 @@ float IspitPriprema::UkupnoVreme(float vremeJedinicno) const {
 
 void IspitPriprema::VratiNaj(float vremeJedinicno, IspitniMaterijal** matMin, IspitniMaterijal** matMax) const {
     if (_trenutno == 0) {
-        throw std::runtime_error("Kolekcija je prazna");
+        std::cout << "Greska: Kolekcija je prazna" << std::endl;
+        return;
     }
     
     *matMin = _materijali[0];
