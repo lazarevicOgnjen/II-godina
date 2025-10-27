@@ -2,7 +2,7 @@
 [komande](#komande)
 <br>
 
-[primer](#primer)
+[oktobar 2025](#oktobar-2025)
 
 
 # komande
@@ -34,65 +34,58 @@
 `staralista.isEmpty()`
 <br>
 
-# primer
+# oktobar 2025
 
 ```cpp
-class LinkedList {
-private:
-    struct Node {
-        int key;
-        Node* next;
-        Node(int k) : key(k), next(nullptr) {}
-    };
+void switch(int key1, int key2){
     
-    Node* head;
-
-public:
-    void switch(int key1, int key2) {
-        if (key1 == key2) return; // Nema potrebe za zamenu istih ključeva
-        
-        // Pronalazimo čvorove i njihove prethodnike
-        Node* prev1 = nullptr;
-        Node* curr1 = head;
-        Node* prev2 = nullptr;
-        Node* curr2 = head;
-        
-        // Tražimo prvi čvor (key1) i njegovog prethodnika
-        while (curr1 != nullptr && curr1->key != key1) {
-            prev1 = curr1;
-            curr1 = curr1->next;
-        }
-        
-        // Tražimo drugi čvor (key2) i njegovog prethodnika
-        while (curr2 != nullptr && curr2->key != key2) {
-            prev2 = curr2;
-            curr2 = curr2->next;
-        }
-        
-        // Ako nismo pronašli oba čvora, prekidamo
-        if (curr1 == nullptr || curr2 == nullptr) {
-            return;
-        }
-        
-        // Menjamo čvorove
-        // Slučaj 1: key1 je glava liste
-        if (prev1 == nullptr) {
-            head = curr2;
-        } else {
-            prev1->next = curr2;
-        }
-        
-        // Slučaj 2: key2 je glava liste
-        if (prev2 == nullptr) {
-            head = curr1;
-        } else {
-            prev2->next = curr1;
-        }
-        
-        // Menjamo next pokazivače
-        Node* temp = curr1->next;
-        curr1->next = curr2->next;
-        curr2->next = temp;
+    Node* p1 = nullptr;
+    Node* p2=nullptr;
+    Node* t1= head;  
+    Node* t2= nullptr;
+    
+    while(t1->key != key1){
+      p1=t1;
+      t1=t1->next;
     }
-};
+    t2=t1->next;
+    while(t2->key!=key2){
+      p2=t2;
+      t2=t2->next;
+   }
+    
+    // key1 na pocetku
+    // switch(1,2)  1 2 3 4 5    2 1 3 4 5
+    if(p1==nullptr)   {
+      Node* tmp = t2->next;
+  		t2->next = t1;
+      t1->next=tmp;
+      t2=head;
+      delete tmp;
+    } 
+    // jedan za drugim
+    // 1 2 3 4 5  -->>  1 3 2 4 5 
+    if(t1->next = t2){
+      Node* temp2 = t2->next;
+      t1->next=temp;
+      t2->next=t1;
+      p1->next=t2;
+      p2->next=temp;
+      delete temp2;
+    }
+    // opsti slucaj
+  	// switch(2,3)  1 2 3 4 5   1 3 2 4 5
+    else{
+      Node* temp = t1->next;   
+      Node* temp2=t2->next;  
+      t2->next = temp;  
+      t1->next=temp2; 
+      p1->next=t2; 
+      p2->next=t1; 
+      delete temp;
+      delete temp2;
+    }
+    
+
+}
 ```
