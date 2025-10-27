@@ -17,3 +17,6 @@
 <br>
 
 `delete brisac;`
+<br>
+
+`novaLista->tail = nullptr; `
