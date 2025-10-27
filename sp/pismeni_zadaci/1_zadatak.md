@@ -20,3 +20,8 @@
 <br>
 
 `novaLista->tail = nullptr; `
+<br>
+
+`staralista.isEmpty()`
+<br>
+
