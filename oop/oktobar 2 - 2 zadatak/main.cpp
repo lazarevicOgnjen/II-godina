@@ -1,3 +1,9 @@
+#include <iostream>
+#include "Ispit.h"
+#include "LekcijaNormalna.h"
+
+using namespace std;
+
 void zadatak2() {
 int maxPodataka = 8, brojPodataka = 9;
 // 3 boda
