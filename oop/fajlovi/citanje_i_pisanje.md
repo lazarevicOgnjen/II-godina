@@ -21,3 +21,13 @@ int main() {
     return 0;
 }
 ```
+<br>
+
+| Mod           | Značenje                                                      | Korišćen sa           |
+| ------------- | ------------------------------------------------------------- | --------------------- |
+| `ios::in`     | Otvara fajl za **čitanje**                                    | `ifstream`, `fstream` |
+| `ios::out`    | Otvara fajl za **pisanje**                                    | `ofstream`, `fstream` |
+| `ios::app`    | Otvara fajl i **dodaje novi tekst na kraj** (append)          | `ofstream`, `fstream` |
+| `ios::trunc`  | **Briše stari sadržaj fajla** kada se otvori                  | `ofstream`, `fstream` |
+| `ios::binary` | Otvara fajl u **binarom režimu**                              | sve klase             |
+| `ios::ate`    | Pozicionira pokazivač **na kraj fajla odmah nakon otvaranja** | sve klase             |
